@@ -1,0 +1,43 @@
+@Component Anotasyonu Nedir? Nasıl Çalışır?
+Bir sınıfı “Bean” olarak işaretler. (spring tarafından yönetilen bean)
+Bu sayede Spring’in component tarayıcısı bu sınıfı alıp “App Context” içine ekler.
+Genel amaçlı kullanımlar içindir.
+@Component ile context:component-scan projedeki tüm @Component ifadelerini tarar.
+@Component tanımı aslında XML dosyası içindeki şu tanımlamaya eşittir.
+   <bean id="sinifAdi" class="com.bean.sinifAdi"></bean>
+Class seviyesinde bir anotasyondur.
+Component taraması sırasında bu anotasyona ait sınıflar taranır.
+@Repository, @Service, @Configuration ve @Controller anotasyonlarının tamamı @Component anotasyonudur.
+-----------------------------------------------------------------------------------------------------------
+
+@Service Anotasyonu Nedir? @Component Anotasyonundan Farkı Nedir?
+@Service, projenin bussines logic kısmında kullanılır ve tanımlandığı sınıfı “Bean” sınıf haline getirir. 
+@Service anotasyonu yerine aynı işlemi yapan ve temel annotation olan @Component de kullanılabilir fakat, 
+@Service anotasyonu amacımıza yönelik daha fazla şey sunuyor. Yani @Component tanımlamasının aynısı ama 
+bir üst modelidir denilebilir. Ayrıca @Service anotasyonunun kullanımı, tanımlandığı sınıfın bir servis sınıfı 
+olduğunu belirtip, anlaşılırlığı arttırması açısından da daha uygundur. Bu sayede artık, Controller tarafından 
+yakalanan istekler ile veritabanı sorgularını gerçekleştiren Repository sınıfı arasında köprü görevi görerek, 
+son kullanıcıya gerekli cevabı üretecek bir sınıf olduğu anlaşılır. Bu aynı zamanda kod bütünlüğünü de sağlar. 
+Projeye sonradan dahil olacak kişi, Service sınıfının hangisi olduğunu ve Controller aracılığıyla kullanıcıdan 
+gelen isteklerin nerede işlemesi gerektiğini bilir.
+-------------------------------------------------------------------------------------------------------------
+
+@Component Bazlı Anotasyonlar Hangileridir? @Component ile Arasındaki Farklar Nelerdir?
+@Component bazlı anotasyonları özetle şu şekilde ifade edebiliriz.
+@Service, @Controller, @Repository, @Configuration = {@Component + ek işlevsel özellikler}
+
+Yani başka bir deyişle, @Service, @Repository, @Controller, @Configuration tanımları, daha özel kullanımlar 
+için @Component tanımlamasının özelleşmiş halleridir. En basit örneği özelleşmiş exception çıktıları almak. 
+Bu tür özel tanımlamaları amacına uygun yerlerde kullanarak, daha özel exception çıktıları alınabilir. Örneğin, 
+@Repository kullanımı, kullanıldığı sınıfta herhangi bir istisna durum oluşursa, hata olarak veritabanına 
+özel exceptionlar dönecektir.
+--------------------------------------------------------------------------------------------------------------
+
+Kısaca Component, Repository, Service, Controller Anotasyonları:
+@Component :  auto-scan için genel bir ifade. Spring tarafından yönetilen Bean'leri tarar ve IoC Container içine ekler.
+@Repository  :  veritabanı işlemleri gerçekleştiren sınıflarda kullanılır.
+@Service        : yazılımın bussines logic kısmını gerçekleştiren sınıflar için kullanılır.
+@Controller   :  frontend veya api isteklerinin karşılayan sınıfları tanımlamak için kullanılır.
+
+Ortak özellikleri: Bean tanımlaması için, tarama/otomatik algılama ve dependency injection yapmak.
+---------------------------------------------------------------------------------------------------------------
