@@ -1,0 +1,35 @@
+@Qualifier Nedir? Ne Zaman Kullanılır?
+Eğer bir interface birden fazla sınıf tarafından implement edildiyse, bu sınıflardan hangsine ait fonksiyonun 
+kullanılacağını bilmek için, @Autowired tanımlamasına ek olarak @Qualifier(“SınıfAdı”) adında bir annotation 
+daha eklendiği takdirde, yine New ile o sınıftan özel bir nesne türetmeye gerek kalmadan, o sınıfın fonksiyonunu 
+(gerekliyse parametre göndererek) kullanabiliyoruz.
+
+Örnek :
+@Component("posts")
+public class Posts implements Blogafem{
+  
+    public String print() {
+        return "post";
+    }
+}
+
+@Component("comments")
+public class Comments implements Blogkafem{
+  
+    public String print() {
+        return "comment";
+    }
+}
+ 
+@Service
+public class BlogkafemService{
+    @Autowired
+    @Qualifier("posts")
+    private Blogkafem blogkafem;
+}
+
+Bu örnekte, Blogkafem adlı Interface implementasyonu iki sınıf tarafından yapılmış. @Autowired anotasyonu ile 
+injection işlemi yapmak istersek, Spring bu sınıflardan hangisini enjekte edeceğini bilemez ve kod hata verir. 
+Bu sebeple, @Qualifier belirteci ile hangi sınıfı enjekte edip kullanacağımızı seçmiş oluyoruz. Şayet, iki sınıf 
+değil de tek sınıf olsaydı ve sınıflar arası bir seçim yapmak zorunda kalmamış olsaydık, o zaman @Autowired 
+kullanımı tek başına yeterli olacaktı.
