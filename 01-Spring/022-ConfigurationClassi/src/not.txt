@@ -1,0 +1,27 @@
+@SpringBootApplication Anotasyonu Nedir?
+Bu anotasyon @Configuration,  @EnbaleAutoConfiguration, @ComponentScan  anotasyonlarının üçünü de içeren temel bir 
+anotasyondur. Özet geçmek gerekirse;
+
+@Configuration : Java tabanlı konfigürasyon işlemi yapan bir anotasyondur
+@ComponentScan : Projeye dahil edilen komponenetlerin otomatik taranmasını sağlar.
+@EnableAutoConfiguration : Varsayılan konfigürasyonların otomatik gerçekleşmesini sağlar.
+-----------------------------------------------------------------------------------------------------------------------
+
+@Configuration Anotasyonu Ne Yapar?
+@Bean tanımlaması içeren fonksiyonlar içerir.
+* Tanımlandığı fonksiyon her neyi return ediyorsa, onun context içine ekleneceğini belirtir.
+* @Bean, genelde 3rd parti sınıflar context içine eklenmek istediğinde kullanılır.
+* Dosya içerisinden birden çok bean tanımı olabileceğini belirtir.
+* Eskiden config işlemleri xml dosyaları içinde yapılırken, Spring 3’ten sonra @Configuration anotasyonuyla java 
+sınıflarından @Bean tanımlamasıyla yapabilme özgürlüğü geldi.
+* Runtime anında config olarak tanımlanan sınıf içindeki @Bean anotasyonlarının, spring container tarafından 
+işlenebilmesi için belirtilir.
+* Aslında @Configuration olarak tanımlanan sınıf içindeki @Bean tanımlamalarının her biri için app context içinde 
+oluşturulmak üzere otomatik xml tanımlaması yapılmış oluyor.
+------------------------------------------------------------------------------------------------------------------
+@ComponentScan Nasıl Çalışır?
+@ComponentScan, proje içerisinde bean olarak tanımlanan sınıfları tarar.
+@Configuration içeren tüm Spring sınıflarını otomatik olarak tarar.
+@Configuration ile kullanılan @Import(OtherConfiguration.class) tanımlamasının alternatifi olarak kullanılabilir.
+@Repository, @Service, @Configuration ve @Controller anotasyonlarının tamamı @Component anotasyonu olduğundan, 
+bu anotasyonları içeren sınıfları da otomatik olarak tarayıp Spring Application Context içine ekler.
