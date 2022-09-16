@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- abstract = true ile artik database bean'i newlenemez hale geliyor. Boylece onu soyutluyoruz -->
+	<bean id="database" class="com.spring.Database" abstract="true">
+		<constructor-arg name="userName" value="can"/>
+		<constructor-arg name="password" value="12345"/>
+		<constructor-arg name="list">
+			<list>
+				<value>elma</value>
+				<value>armut</value>
+				<value>kiraz</value>
+			</list>
+		</constructor-arg>
+	</bean>
+	
+	<!-- 
+	onceki projeden tek farki field olarak list ekledik.
+	Yukarida listeye degerler ekledik.
+	asagida mySqlServer'da ise yukaridaki listeye ek olrak araba markalari ekledik bunlar mySqlServer'a ozel
+	degerler oldu. Yukaridaki listenin ustune degerler yazmamizi saglayan merge = true degeri sagliyor.
+	Ayni sekilde kalitimi map'te de kullanabiliriz merge ozelligi true olmalidir
+	-->
+	
+	<bean id="mySqlServer" class="com.spring.Database" parent="database">
+		<constructor-arg name="url" value="jdbc://mysql:localhost/3306"/>
+		<constructor-arg name="list">
+			<list merge="true">
+				<value>fiat</value>
+				<value>renault</value>
+				<value>ford</value>
+			</list>
+		</constructor-arg>
+	</bean>
+	
+	<!-- 
+	burada da oracle'a ait degerler ekledik listeye
+	 -->
+	
+	<bean id="oracle" class="com.spring.Database" parent="database">
+		<constructor-arg name="url" value="jdbc://oracle:localhos/8580"/>
+		<constructor-arg name="list">
+			<list merge="true">
+				<value>book</value>
+				<value>pencil</value>
+				<value>table</value>
+			</list>
+		</constructor-arg>
+	</bean>
+</beans>
