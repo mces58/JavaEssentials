@@ -1,0 +1,22 @@
+Spring yaşam döngüsü, Bean oluşturulduğunda, başladığında ya da bitiminde onu yönetmemizi sağlar.  
+Burada karşımızda 4 adet kavram çıkacaktır şimdi bunları inceleyelim:
+
+1-)InitializingBean
+
+Bir interfacedir. Bu interface sınıfımıza implement edildiğinde afterPropertiesSet() metodunu override ederiz. 
+Bu metot bizim init metodumuzdur yani bean oluşturulduktan sonraki ilk çalışan metotdur.
+
+2-)DisponsableBean
+
+Bir interfacedir. Bu interface sınıfımıza implement edildiğinde destroy() metodunu override ederiz. 
+Bu metot bizim destroy metodumuzdur yani bean bitirilmeden son çalışan metotdur.
+
+3-)ApplicationContextAware
+
+Bir interfacedir. Bu interface Spring konteynere tarafından Bean’e erişmemizi sağlar. 
+Bu erişimi de setApplicationContext() metodu sayesinde yapar.
+
+4-)BeanNameAware
+
+Bir interfacedir. Bu interface oluşturulan Beanimize erişmemize ve bilgilerine ulaşmamızı sağlar.
+Bu erişimi setBeanName() metodu sayesinde yapar.
