@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- constructor ile deger atama -->
+	<bean id="collections" class="com.spring.Collections">
+		
+		<!-- field'a deger atama -->
+		<constructor-arg name="name" value="Can"/>
+		
+		<!-- listeye deger atama -->
+		<constructor-arg name="cars">
+			<list>
+				<value>Toyota</value>
+				<value>BMW</value>
+				<value>Mercedes</value>
+				<value>Fiat</value>
+			</list>
+		</constructor-arg>
+		
+		<!-- map'a deger atama -->
+		<constructor-arg name="dictionary">
+			<map>
+				<entry key="book" value="kitap"/>
+				<entry key="car" value="araba"/>
+				<entry key="apple" value="elma"/>
+				<entry key="pencil " value="kalem"/>
+			</map>
+		</constructor-arg>
+	</bean>
+</beans>
