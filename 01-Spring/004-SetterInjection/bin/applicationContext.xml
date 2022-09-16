@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+  <bean id = "database" class = "com.spring.dao.MsSqlCustomerDAO"></bean>
+  <!--
+  bunun esiti:
+  CustomerDAO customerDAO = new OracleCustomerDAO();
+  -->
+  
+  <bean id="service" class="com.spring.business.CustomerManager">
+  	<property name="customerDAO" ref="database"></property>	
+  	<!--  
+  	burada da setter'i cagırmamız gerekir bunu da property ile yapıyoruz 
+	CustomerManager'in setter fonksiyonun adi ile name ozelligi ayni olmali set ifadesi olmadan
+	ref ise database veriyoruz .
+	database içinde ne varsa ona gore calısacak  
+	-->
+	<!--
+  	bunun esiti:
+  	CustomerService customerService = new CustomerManager();
+  	customerService.setCustomerDAO(customerDAO) yukarida new'lenen customerDAO parametre olarak gider
+   	-->
+  </bean>
+
+</beans>
