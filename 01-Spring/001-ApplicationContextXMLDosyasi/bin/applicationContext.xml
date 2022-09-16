@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+  <bean id = "database" class = "com.spring.MsSqlCustomerDAO"/>
+  
+	<!--  	beans temel anlamda class'lar demek
+	
+			id yerine istedigimiz adı verebiliriz biz database verdik
+			idyi sey gibi dusun CustomerManager manager = new CustomerManager();
+			burada ki manager gibi dusun nesneye verdigimiz ad işte
+			burada id'ye verdigin isim ile main'de verdigin isim ayni olmali yani 
+			burada database verip main'de veritabani adini veremezsin
+			
+			class kısmına hangi class'ın new'lenmesini istiyorsan onun adını veriyorsun 
+			oracle ile calısıyorsan o classın adını mysql ile calıscaksan oracle silip mysql yazıyorsun  
+	-->
+  </beans>
