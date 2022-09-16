@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- abstract = true ile artik database bean'i newlenemez hale geliyor. Boylece onu soyutluyoruz -->
+	<bean id="database" class="com.spring.Database" abstract="true">
+		<constructor-arg name="userName" value="can"/>
+		<constructor-arg name="password" value="12345"/>
+	</bean>
+	
+	<!-- 
+	biz burada mySqlServer ve oracle baglantisi yapacagiz. Lakin userName ve password 
+	ikisi icinde ortak ise bunu kalitim ile aktarabiliriz. Bunu da parent ile yapiyoruz.
+	Oracle ve MySqlServer icin bagltanti urlleri farkli oldugu icin onlara ozel degerler veriyoruz.
+	Bu yapi xml dosyasinda kullaniliyor. Class yapisinda kullanilmiyor.
+	-->
+	
+	<bean id="mySqlServer" class="com.spring.Database" parent="database">
+		<constructor-arg name="url" value="jdbc://mysql:localhost/3306"/>
+	</bean>
+	
+	<bean id="oracle" class="com.spring.Database" parent="database">
+		<constructor-arg name="url" value="jdbc://oracle:localhos/8580"/>
+	</bean>
+</beans>
