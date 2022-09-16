@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+  <bean id = "database" class = "com.spring.dao.MsSqlCustomerDAO"></bean>
+  <!--
+  bunun esiti:
+  CustomerDAO customerDAO = new OracleCustomerDAO();
+  -->
+  
+  <bean id="service" class="com.spring.business.CustomerManager">
+  	<constructor-arg ref="database"/>
+  	<!--
+  	ref kısmına database verdik .cunku database biz new'ledik yani CustomerDAO'yu imlement edeni new'ledik
+	constructor-arg ise parametreyi gondermeye yariyor yani service dedigimiz aslinda CustomerManager ve ref="database"
+	diyerek new'leme olurken database'i parametre olarak gonder. Peki database dedigimiz ne diye soracak olursan 
+	o da MsSqlCustomerDAO, MySqlCustomerDAO veya OracleCustomerDAO bu ucunden biri olabilir hangisi ile calıisiyorsak artik
+	-->
+	
+	<!-- 
+	bunun esiti:
+	CustomerService customerService = new CustomerManager(customerDAO);
+	-->
+	
+  </bean>
+
+</beans>
