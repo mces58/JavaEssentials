@@ -1,0 +1,43 @@
+Spring MVC Framework / Spring Boot Anotasyonları (Annotations) Nedir?
+
+Annotation kelimesinin Türkçe karşılığını, kimi yerlerde "notasyon" kimi yerlerde ise "anotasyon" ifadesini görebilirsiniz. 
+Peki kısaca nedir bu Annotations denilen kavram.
+* Developlement anında IDE veya compiler tarafından yada run-time anında framework tarafından yorumlanan ifadelerdir.
+* Bir öğenin tanımını yapar, ne yapması gerektiğini açıklar ve yazılım geliştirme sürecini hem hızlandırır hem de kolaylaştırır.
+* Anotasyonlar kodun içerisinde tanımlandıktan sonra, işlevsel hale gelebilmeleri için Spring tarafından 2 defa taranırlar.
+* İlk önce yalnızca anotasyonları (spring tarafından yönetilen bean) taranır ve yapılmas gereken görev eşleştirmeleri yapılır.
+* İkinci taramada ise anotasyon tanımlamasına göre  işlemini yapar.
+* Tüm Spring Bean’leri “App Context” yada "Spring Context" (IoC container) adı verilen bir container içinde yaşarlar.
+
+Anotasyonlar çok güçlü kullanımlardır ve çok farklı şekillerde kullanılabilirler. Birkaç örnek vermek gerekirse:
+* Kısıtlamaları ve kullanımı tanımlayan anotasyonlar: @Deprecated, @Override, @NotNull
+* Bir öğenin çalışma yapısını belirten notasyonlar: @Entity, @TestCase, @WebService
+* Bir öğenin davranışını belirten notasyonlar: @Statefull, @Transaction
+* Bir öğenin nasıl işleneceğinin belirten notasyonlar: @Column, @XmlElement
+
+Özetle, her durumda bir öğeyi tanımlamak ve anlamını netleştirmek için kullanılan notasyon türleri vardır.
+Burada öğe olarak bahsedilen şey bir değişken olabilir, bir fonksiyon veya bir sınıf olabilir.
+
+Temel Spring Boot Anotasyonları:
+* @Bean - Bir metodun Spring tarafından yönetilen bir Bean ürettiğini belirtir
+* @Service - Belirtilen sınıfın bir servis sınıfı olduğunu belirtir.
+* @Repository - Veritabanı işlemlerini gerçekleştirme yeteneği olan yapıldığı repository sınıfını belirtir.
+* @Configuration - Bean tanımlamaları gibi tanımlamalar için bir Bean sınıfı olduğunu belirtir
+* @Controller - Requestleri yakalayabilme yeteneği olan bir web controller sınıfını belirtir.
+* @RequestMapping - controller sınıfının handle ettiği HTTP Requestlerin path eşleştirmesini yapar
+* @Autowired - Constructor, Değişken yada setter metodlar için dependency injection işlemi gerçekleştirir
+* @SpringBootApplication - Spring Boot autoconfiguration ve component taramasını aktif eder.
+
+@Autowired Anotasyonu Nedir? Çalışma Mantığı Nedir?
+Spring Contex, container enjeksiyon noktalarını bularak, orada bir nesne oluştrur. New anahtar kelimesi ile bir nesne 
+oluşturulmaz. Kullanılacak nesne Spring tarafından oluşturulur. Bu sayede, dependency injection tasarım kalıbı (
+design pattern) da uygulanmış olur.
+Özetle @Autowired yalnızca injection için kullanılır. @Autowired ifadesini kullanabilmek için, her iki sınıf da 
+Bean sınıfı olmalı. Örneğin @Service anotasyonu ile tanımlanmış bir servis sınıfı, @Repository ile tanımlanmış 
+bir sınıftan @Autowired ile bir nesne üreterek, veritabanı işlemlerini gerçekleştirebiliyor. Burada @Servie ve 
+@Repository tanımlarının yapıldığı sınıflar için Spring IoC Container (application context) içerisinde gerekli 
+Bean'ler oluşturulduğu için, her iki sınıf da aslında Bean sınıfı olmuş oluyor. Dolayısıyla service sınıfı 
+içerisinde repository sınıfı için @Autowired işlemi yapılabiliyor.
+Kısaca @Autowired, bean nesnesinin istenilen alana, başka bir bean nesnesinin alınıp, yerleştirilmesiyle olur.
+
+
