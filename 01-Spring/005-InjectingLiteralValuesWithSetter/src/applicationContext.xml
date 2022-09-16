@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean id="database" class="com.spring.dao.MySqlCustomerDAO">
+	<!-- field'lar hangi class'ta ise onun adının oldugu yede degerlerini vereceksin -->
+	
+	<property name="connectionString" value="Baglanti yolu"/>
+	<!-- 
+	name yerine connectionString verdik cunku field'in adi bu. 
+	value ise o fieldin içine atanacak degeri atadik ne vermek istıyorsan  
+	-->
+	
+	<property name="year" value="2022"/>
+	<!-- yukarıdaki acıklamalar burada da gecerli -->
+	<!-- property burada birnevi setter fonksiyonu gibi dusunulebilir -->
+	</bean>
+	
+	<bean id="service" class="com.spring.business.CustomerManager">
+	<property name="customerDAO" ref="database"/>
+	<!-- setter injection -->
+	
+	<!-- kısacasi deger atamayida manager class'ini cagirmayida setter ile yaptik -->
+	<!-- bir sonraki projede bu degerleri consturctor ile atadik yani constructor-arg kullanarak -->
+	</bean>
+
+</beans>
