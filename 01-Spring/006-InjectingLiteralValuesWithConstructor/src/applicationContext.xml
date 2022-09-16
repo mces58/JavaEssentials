@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean id="database" class="com.spring.dao.MsSqlCustomerDAO">
+	<constructor-arg name="connectionString" value="Baglanti yolu"/>
+	<constructor-arg name="year" value="2022"/>
+	<!-- constructor arg ile deger atama -->
+	</bean>
+
+	<bean id="service" class="com.spring.business.CustomerManager">
+	<constructor-arg ref="database"/>
+	<!-- constructor arg ile manager claas'ini new'leme -->
+	</bean>
+</beans>
