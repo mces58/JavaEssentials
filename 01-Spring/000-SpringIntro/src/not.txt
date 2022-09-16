@@ -1,0 +1,49 @@
+inversion of Control ve Dependency injection
+
+1. tanım:
+Kabaca, kodumuz çalışacağı zaman framework’ün kodumuzu çağırması, çalıştırması ve kontrolü tekrar ele alması 
+sürecine Inversion of Control denir. Biraz daha teknik ifadeleri verecek olursak; bir uygulamanın bir kısmının 
+ya da objelerinin kontrolünün bir framework’e verilmesi olarak tanımlayabiliriz. Bu yapının tanımı genellikle 
+OOP context’i içerisinde kullanılır. Kod içerisinde bir çağrım yaptığımızda framework’ün program akışını ele
+alması ve kodumuz üzerinde çağırımlar yapmasına imkan tanır. Bunu sağlamak için de framework’ler ek bazı 
+davranışlara sahip abstractionları kullanır. Eğer kendi davranışımızı da eklemek istersek framework’ün ilgili 
+yapısını kendi sınıflarımıza extend etmemiz gerekir.
+
+2. tanım:
+Inversion of Control, uygulama içerisinde nesne bağımlılıklarının yönetimini developer'dan alan bir yöntemdir. 
+Bu yöntem ile, projedeki bağımlılıkların oluşturulmasını geliştiricinin yapması yerine belli bir mekanizmanın 
+yapması olarak tanımlanabilir. (Frameworkler örnek gösterilebilir).
+
+IoC kullanılmadan yazılan örnek bir kod bloğu:
+
+public class IOC {
+	public MyClass _class;
+	public IOC(){
+		_class = new MyClass();
+	}
+}
+
+Yukarıdaki ufak örnekte IOC classı içerisinde MyClass adlı class'ı constructor içerisinde kendi oluşturuyor. 
+Bu şu anlama geliyor; MyClass sınıfı dolaylı yoldan da olsa IOC sınıfına bağlıdır. Bu durumda IOC sınıfının 
+değişmesi, bu değişiklikten bir haber olan MyClass sınıfını da etkileyecektir.
+
+IOC kullanılarak yazılan örnek bir kod bloğu:
+
+public class IOC {
+	public IMyClass _class;
+	public setAnotherClass(IMyClass class) {
+		this._class = class;
+	}
+	public IOC() {
+		IOC.use(this._class); // Instance oluşturma
+	}
+}
+
+Burada interface kullanmamızın sebebi (IMyClass), IMyClass sınıfının şartlarını sağlayan herhangi bir sınıf 
+IOC sınıfında üretilebilir. Artık IOC class'ı, oluşturulmak istenen sınıfın nereden geldiğini önemsemiyor.
+
+Spring Konteyniri 3 farkli sekilde konfigre edebiliriz.
+1 - Full XML dosyasinda konfigre etmek
+2 - XML Component scan ile konfigre etmek bu adimda XML dosyasini kuculttuk
+3 - Java Configuration Class ile konfigre etmek yani XML doyasini bir class'a cevirmek boylece XML dosyasina 
+gerek olmaayacaktir.
