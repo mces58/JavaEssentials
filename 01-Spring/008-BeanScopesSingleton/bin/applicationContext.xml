@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- 
+	Scope Nedir?
+	Beanlerimizin bir yaşam döngsü vardır. Bu yaşam döngüsü çerçevesinde istediğimiz işlemleri yapması için Beanimizin
+	kapsamını yani scope’unu belirlememiz gerekmektedir. Spring Beanlerimizdeki scopeleri Spring IoC container 
+	tarafından yönetilir ve beanlerimizdeki nesnelerin ne zaman ve nasıl oluşturulacağını belirler.
+
+	Spring’e oluşturduğumuz beanlerin Scope’lerini belirterek yönetmemiz ve Spring’in bu belirtmemize göre oluşturmasını 
+	sağlamaktayız. Bu scope göre Beanimizin kullanım alanını bir bakıma belirtmiş olmaktayız. 
+	-->
+
+	<bean id="mySport" class="com.spring.FootballDAO" scope="singleton" ></bean>
+	
+	<!-- 
+	Singleton Bean Nasıl Çalışır?
+	Spring'in Singleton scope'lu bean'leri nasıl yönettiğiyle bölümümüze başlayalım. Özellikle Singleton scope, 
+	Spring'te varsayılan (ve en çok kullanılan) bean scope'u olduğundan bu scope'u kullanırken ne bekleyeceğinizi 
+	bilmeniz gerekir.
+	Spring, context'ini yüklediğinde ve bean'e bir ad (bazen bean ID olarak da adlandırılır) atadığında singleton
+	bir bean oluşturur. Belirli bir bean'e başvurduğunuzda her zaman aynı instance'ı elde ettiğiniz için de bu 
+	scope'u singleton olarak adlandırıyoruz. Ama dikkatli olun! Eğer bean'ler farklı adlara sahiplerse, 
+	Spring Context'inde aynı tipte daha fazla instance'a sahip olabilirsiniz. 
+	-->
+	<!-- scope="singleton" versende vermesende  default olarak bu ayardadir-->
+	
+	<!-- SportManager class'inin new'lenmesi -->
+	<bean id="manager" class="com.spring.SportManager" scope="singleton">
+	<constructor-arg ref="mySport"/>
+	<!-- parametreyi gonderiyoruz -->
+	</bean>
+	
+</beans>
