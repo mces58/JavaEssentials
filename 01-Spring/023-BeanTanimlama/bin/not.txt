@@ -1,0 +1,39 @@
+@Bean Anotasyonu Nedir?
+* Metod düzeyinde kullanılan bir anotayondur.
+* Bu anotasyon tıpkı @Component anotasyonu gibi çalışır.
+* Bir sınıf @Configuration anotasyonu ile tanımlıysa, o sınıfın fonksiyonları @Bean olarak tanımlanabilir.
+* @Bean olarak tanımlanan bir fonksiyon için, fonksiyon adı geçerli bir id yada bean adı olur.
+* Eğer bir metod @Bean ile tanımlıysa, Spring tarafından yönetilen bir Bean ürettiğini belirtilmiş olur.
+* Spring dokumantasyonunda @Configuration ve @Bean için sunulan örnek kullanım :
+@Configuration
+public class AppConfig {
+    @Bean
+    public TransferService transferService() {
+        return new TransferServiceImpl();
+    }
+}
+
+@Bean tanımlaması üstteki gibi Java dosyası içerisindeki bir fonksiyon üzerinde direkt olarak tanımlanacağı gibi 
+şu şekide bir XML dosyası içinde de tanımlanabilir :
+<beans>
+    <bean name="transferService" class="com.acme.TransferServiceImpl"/>
+</beans>
+Her iki kullanım da aynıdır ve Spring Application Context içinde, "transferService" adında bir bean nesnesi 
+oluşturulmasını sağlar.
+--------------------------------------------------------------------------------------------------------------
+
+@Component ve @Bean Anotasyonları Arasındaki Fark Nedir?
+Her iki anotasyonda aynı işi gerçekleştirirler. Tanımlandıkları yer için Application Context içerisinde bean 
+oluşturmayı sağlarlar. Aralarındaki temel fark, kullanım amaçlarıyla ilgilidir.
+
+Örneğin iki farklı uygulamanız var ve bu iki uygulama da Mail modülünü kullanıyor fakat, uygulamardan bir tanesi 
+mail modülüne ait tüm servisleri kullanırken, diğerinde sadece belli başlı servisler kullanılıyor. Böyle bir 
+durumda Mail modülünü projeye @Component olarak import etmek demek, işe yarayan ve yaramayan tüm Mail servislerini 
+projeye gereksiz yere dahil etmek anlamına gelecektir. Bunu önlemek için ise, @Component yönetimini seçtiysek 
+eğer, @ComponentScan için koşullar yazmamız gerekecektir. Fakat bu koşulları dikkatli yazmazsak servisin düzgün 
+çalışmama ihtimali de var.
+
+Diğer taraftan, @Component kullanmak yerine @Bean ifadesi kullanılabilir. @Bean ifadesini sadece kullanacağımız 
+servisler için tanımlarsak, işe yaramayan servisleri için boş yere projemize import etmemiş oluruz. Bu yüzdendir 
+ki @Bean tanımlaması daha çok, third-pary (üçüncü parti) uygulamaları projemize import ederken tercih edilir. 
+Diğer durumlarda @Component kullanılabilir.
