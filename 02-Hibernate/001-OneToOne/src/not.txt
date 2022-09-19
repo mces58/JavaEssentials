@@ -1,0 +1,101 @@
+Bu konular icin ayri bir veritabani olusturup onun uzerinden calis xml dosyasini guncellemeyi unutma
+
+CREATE DATABASE HIBERNATE
+
+USE HIBERNATE
+
+DROP TABLE IF EXISTS Bilet
+CREATE TABLE Bilet(
+	id INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+	satis_tarihi DATE DEFAULT NULL,
+	koltuk_no INT DEFAULT NULL,
+	bilet_fiyati SMALLMONEY DEFAULT NULL
+)
+
+DROP TABLE IF EXISTS Musteri
+CREATE TABLE  Musteri (
+	id INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+	musteri_adi VARCHAR(45) DEFAULT NULL,
+	musteri_soyadi VARCHAR(45) DEFAULT NULL,
+	bilet_id INT NOT NULL FOREIGN KEY REFERENCES Bilet(id) ON DELETE NO ACTION ON UPDATE NO ACTION
+)
+
+Mesela bir bilet otomasyonu olsun. Bir tiyatro için bilet satılıyor ve her bileti yani koltuğu yalnızca bir kişi satın 
+alabiliyor. Elimizde iki tane tablo bulunsun bunlardan biri müşteri tablosu ikincisi ise bilet tablosu. Bu iki tablo 
+arasındaki ilişki birebir olur. Çünkü her müşteri yalnızca bir bilet satın alabiliyor ve her bilet yalnızca bir kişiye 
+ait olabiliyor. Peki ilişkiyi kurarken hangi tabloya ekleme yapacağız? Müşteri tablosu mu Bilet tablosu mu? Bu durumu 
+şu açıdan bakmamız gerekiyor. Eğer bilet tablosuna müşteri id’sini eklersem bu durum da satılmayan biletler için bu 
+bölüm null değerini alacaktır. Ancak bu bizim istediğimiz bir durum değil. Onun yerine müşteri tablosuna bilet id’sini 
+eklersek her eklenen müşteri bir bilet satın almış olacağı için herhangi bir null değeri söz konusu değildir.
+-------------------------------------------------------------------------------------------------------------------------
+
+Foreign key veri butunlugu: ON {DELETE | UPDATE} {CASCADE | NO ACTION | SET DEFAULT | SET NULL}
+
+* ON DELETE: Referans alınan değer silindiğinde
+* ON UPDATE: Referans alınan değer güncellendiğinde yapılacak işlemi ifade eder.
+
+Bu ifadelerden sonra girilecek değerler:
+* CASCADE: Referans alınan değer üzerinde yapılan değişiklik referans alan değerler üzerinde de işlenir. 
+Referans alınan değerin silinmesi durumunda referans alan kayıtlar da silinir.
+
+* SET DEFAULT: Referans alınan değerin silindiğinde, referans alan kayıtta bir default tanım var ise değer default 
+olarak değiştirilir.
+
+* SET NULL: Referans alınan değerin silindiğinde, referans alan kayıt NULL değer kabul ediyor ise değer NULL 
+olarak değiştirilir.
+
+* NO ACTION: Referans alınan değer silindiğinde, referans alan bir kayıt var ise silinmesine müsaade edilmez, 
+default olarak atanan işlem budur.
+
+ikinci tanimlari:
+
+CASCADE:
+FOREIGN KEY kullanılırken ON DELETE CASCADE ifadesi kullanılırsa referans tablodan silinen satırların kullanıldığı 
+diğer tablolardan da ilgili satırlar silinecektir. Örneğin OGRENCILER tablosundan 613 nolu öğrenci silindiğinde 
+NOTLAR tablosunda bu öğrenciye ait tüm bilgiler de otomatik olarak silinecektir.
+FOREIGN KEY kullanılırken ON UPDATE CASCADE ifadesi kullanılırsa referans tabloda güncellenen satırların kullanıldığı 
+diğer tablolardan da ilgili satırlar güncellenecektir. Örneğin OGRENCILER tablosundan 613 nolu öğrencinin numarası 
+713 olarak güncellenirse NOTLAR tablosunda bu öğrenciye ait tüm satırlarda ogr_no sütunu otomatik olarak 713 
+değeriyle güncellenecektir.
+
+NO ACTION:
+Birincil tarafta silmeye müsaade edebilmek için yabancı taraftaki bütün ilişkili satırların silinmiş olması şartını arar. 
+Bir tane bile silinmemiş satır varsa, birincil taraftaki satırın da silinmesine izin vermez. Eğer belirtilmemişse default
+seçenek olarak NO ACTION seçeneği geçerlidir.
+
+SET DEFAULT:
+Bir satır silindiğinde buna bağlı yabancı anahtar sütunu üstünde default değeri varsa, yabancı anahtar sütununa 
+default değeri atanır.
+
+SET NULL:
+Bir satır silindiğinde buna bağlı yabancı anahtar sütun NULL olabilir olarak tanımlı ise, yabancı anahtar sütununa 
+NULL değeri atanır.
+
+buraya kadar olani sql de ki kullanimi icin aciklama idi.
+--------------------------------------------------------------------------------------------------------------------------
+
+Java da cascade
+Cascade JPA standartıdır. Java sınıflarımızdaki ilişkilerin davranışlarını cascade niteliğini kullanarak ayarlarız. 
+“İlişki davranışları” kavramını biraz açıklayacak olursak, bir değer silinirse o veri ile ilişkili olan kayıtların 
+etkilenmesini ya da etkilenmemesi işlemlerini Java nesneleri olarak yönetilmesini sağlamaktayız. Bu JPA teknolojisi 
+bu davranışları Java nesneleri üzerinden yöneterek veritabanına ulaşmadan yormadan halleder.
+
+Cascade Tiplerini Açıklayalım:
+* PERSIST
+İlişki persist olarak tanımlandıysa kaydedilen nesnenin alt nesneside kaydedilir.
+
+* MERGE
+İlişki merge olarak tanımlandıysa nesne merge edilirse ilişkili olan nesne de merge edilir.
+
+* REMOVE
+İlişki remove olarak tanımlandıysa nesne silinirse ilişkili olan nesne de silinir.
+
+* REFRESH
+İlişki refresh olarak tanımlandıysa nesne yenilenirse bağlı olan nesne de yenilenir.
+
+* ALL
+İlişki all olarak tanımlandıysa yukarıdaki tüm işlemler için birlikte yapılır.
+
+Örnek vermek gerekirse Yazar ve Kitap ilişkisinde bir yazar silinirse onunla ilgili olan 
+tüm kitaplar birlikte kaydedilir güncellenir veya silinir.
+

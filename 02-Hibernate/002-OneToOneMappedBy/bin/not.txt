@@ -1,0 +1,22 @@
+CREATE DATABASE HIBERNATE
+
+USE HIBERNATE
+
+DROP TABLE IF EXISTS Bilet
+CREATE TABLE Bilet(
+	id INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+	satis_tarihi DATETIME DEFAULT NULL,
+	koltuk_no INT DEFAULT NULL,
+	bilet_fiyati SMALLMONEY DEFAULT NULL
+)
+
+DROP TABLE IF EXISTS Musteri
+CREATE TABLE  Musteri (
+	id INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+	musteri_adi VARCHAR(45) DEFAULT NULL,
+	musteri_soyadi VARCHAR(45) DEFAULT NULL,
+	bilet_id INT NOT NULL FOREIGN KEY REFERENCES Bilet(id) ON DELETE NO ACTION ON UPDATE NO ACTION
+)
+
+Bu projede ki senaryo onceki projedeki senaryo ile tamamen ayni tek fark onceki projede biz musteriden bilete gecis
+yapabiliyorken biletten musteriye gecis yapamiyorduk. Bunu simdi burada yapacagiz. Bunu da mappedBy ile yapacagiz
