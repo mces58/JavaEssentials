@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+    
+        <!-- JDBC Database connection settings -->
+    	<!-- hibernate.connection.driver_class : JDBC driver classının yerini tanımlar. -->        
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        
+        <!-- hibernate.connection.url : Veritabanımızın çalıştığı url bilgisini barındırır. Burada veritabanının çalıştığı portu doğru yazmak önemlidir. -->
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/world?useSSL=false&amp;serverTimezone=UTC</property>
+        
+        <!-- hibernate.connection.username : Veritabanına erişimi olan kullanıcının adı. -->
+        <property name="hibernate.connection.username">root</property>
+        
+        <!-- hibernate.connection.password : Veritabanına erişimi olan kullanıcının parolası -->
+        <property name="hibernate.connection.password">12345</property>
+        
+        <!-- hbm2ddl.auto : Veritabanına bağlantı yapıldığında var olan veritabanı üzerine mi devam edilsin, yoksa 
+        uygulama her çalıştığında baştan mı veritabanı oluşturması için ayar. Yalnızca üzerine devam etmesi için
+        “update”, baştan oluşturması için “create” belirlememiz gerekiyor. -->
+        <!-- <property name="hbm2ddl.auto">update</property> -->        
+        
+        <!-- JDBC connection pool settings... using built-in test pool -->
+        <!-- hibernate.connection.pool_size : Veritabanına bağlantı sırasındaki sıra limtini belirlemek için kullanılır. Şuan bizim için çok önemli değil. -->
+        <property name="hibernate.connection.pool_size">1</property>
+        
+        <!-- Select our SQL dialect -->
+        <!-- hibernate.dialect : Bu property belirtilen veritabanı için SQL sorgularının Hibernate tarafından oluşturulması için gereklidir. -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        
+        <!-- Echo the SQL to stdout -->
+        <!-- show_sql : Console ekranında Hibernate tarafından oluşturulan SQL sorgularını text olarak görmek isterseniz “true” olarak atamanız gerekmektedir. -->
+        <property name="hibernate.show_sql">true</property>
+        
+        <!-- hql formatinda degilde bildigin sql formatinda sorgulari konsolda gosterir -->
+        <property name="hibernate.format_sql">true</property>
+                
+        <!-- Set the current session context -->
+        <property name="hibernate.current_session_context_class">thread</property>
+        
+    </session-factory>
+</hibernate-configuration>

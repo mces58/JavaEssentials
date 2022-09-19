@@ -1,0 +1,162 @@
+Uygulamalarımızda, geliştirdiğimiz projelerde veritabanına bağlanma ihtiyacı duyduğumuzda eskiden genellikle 
+ADO.Net denilen, veritabanına doğrudan uygulama içerisinden bağlandığımız, veritabanı işlemlerini SQL sorgularıyla 
+yaptığımız yöntem kullanılırdı. İlerleyen yazılım teknolojisi, nesne tabanlı programlama tabanlı dillerin de gelişmesi 
+ve yaygınlaşması ile ADO.net’in karmaşıklığını basite indiren ve daha okunaklı kod satırları yazabildiğimiz 
+ORM (Object Relational Mapping) yapıları ortaya çıktı.
+
+ORM Nedir?
+Ado.net kullanılan projelerde veritabanı ile ilgili yapılan işlemlerde yazılımcı doğrudan sql sorguları yazmak 
+durumundadır. ORM ile kod içerisine yazılan sql satırları ortadan kalkmıştır. Veritabanımız içerisinde yer 
+alan tablolar bir sınıf (class), kolondaki alanlarımızın her biri değişken (property) olarak tanımlanmakta, 
+veritabanındaki kayıtlara da ait olduğu sınıfta bir obje olarak erişebilmekte ve kullanabilmekteyiz.
+
+Programlama dillerinin de kendine ait farklı ORM framework’leri bulunmaktadır.
+
+Dillere göre sık kullanılan ORM örnekleri;
+
+* C#: Entity Framework,  Dapper, ECO, XPO, Norm
+* Java: Hibernate, Ebean, Torque, JPA,MyBattis
+* Php: CakePHP, Codelgniter, RedBean, Doctrine,Propel, PdoMap
+* Python: Django, South,Storm
+
+Neden ORM kullanmalıyım?
+ORM’nin sağladığı kolaylık ne diyecek olursak eğer bir örnek üzerinden gidebiliriz.
+
+Id’sini bildiğimiz bir kullanıcının ismini almak isteyelim. Bunun için ado.net kullanılan bir projede aşağıdaki 
+gibi bir kod sırası izlenmesi gerekmekteydi.
+
+1 string sql = "SELECT FirstName FROM Accounts WHERE Id = 7";
+2 DbCommand cmd = new DbCommand(connection, sql);
+3 Result result = cmd.Execute();
+4 string firstName = result[0]["FirstName"];
+
+ORM tabanlı bir yapıda ise aynı işlemi aşağıdaki gibi yapabiliriz.
+
+1 Account kullanici = repository.GetAccount(7);
+2 string isim= kullanici.FirstName;
+
+ORM kullanmanın avantajları
+* Nesne tabanlı programlama standartlarına uygun olarak kod yazma imkanı verir.
+* Minimum SQL bilgisi ile veritabanı işlemleri yapmak imkanı tanır.
+* Veritabanı platformu bağımlılığı yoktur. Oracle kullanıyorken MSSQL geçişini sorunsuzca gerçekleştirebiliriz.
+* Ado.net’e karşı daha güvenlidir. Sql Injection gibi bilinen saldırılara karşı güvenlik önlemleri vardır.
+* Kod yazma süresini kısaltır.
+* Kod okunabilirliğini arttırır.
+
+ORM kullanmanın dezavantajları
+* Ado.net’e kıyasla performans olarak daha yavaştır.
+* Veritabanı nesneler üzerinden modellendiğinden nesneler arasında bağ bulunmaktadır. 
+Bilinçsiz yapılan müdahaleler ile bağlantıyı bozma durumu bulunmaktadır.
+* İlk kez başlayacak olanlar için yazım kuralları (syntax) farklı gelebilir.
+-------------------------------------------------------------------------------------------------------------------
+
+2001 yılında Gavin Kral tarafından oluşturulan açık kaynak kodlu olarak yayınlandı Hibernate. Hem Java’da hem de 
+C Sharp’ta kullanılabilen bir fireworktür. Hibarnate ile yapılan tüm işlemleri JDBC ile yapabilmekteyiz. Ancak 
+kod karışıklığı ve Nesneye Yönelimli Programlama mantığına uygun bir yazılım standartına ulaşmak için yapılan
+Nesne tabanlı programlarda veritabanımızda kullanacağımız bir yapıdır Hibernate. Hibernate veritabanımızla 
+iletişime geçen programımızdan her türlü işlemi yapmamızı sağlayan bir aracıdır. Hibernate bir ORM aracısıdır 
+tekrar belirtmekte fayda var.
+Temel olarak “neden Hibernate kullanalım”a cevap olarak sadece yazım kolaylığından bahsedelim. Detaylara sonra ineriz.
+
+JDBC ile veritabanına kayıt eklerken kullandığımız yapı;
+stmt.executeUpdate( "INSERT INTO musteri VALUES ('can', 'eser')");
+
+Hibernate ile kayıt eklerken kullanacağımız yapı ise;
+session.save(musteri);
+
+yazmak yeterli olmakta.
+
+Yazılım karmaşıklığından kurtarmakla birlikte düzgün bir yazılım yapısı kullanmamıza olanak sağlamaktadır.
+
+Hibarnate’yi kullanırken bizim veri taşıyıcılarına ihtiyacımız bulunmaktadır. Bu veri taşıyıcıları 
+Plain old java object denilen ve POJO adı ile bilinen Java nesnesidir. Pojo bir bakıma Bean’dir.
+Pojo’muzu kullanmak için Hibernate’nin hangi veritabanına nasıl işleneceğini XML dosyasında beliritilir. 
+XML dosyasında gerekli olan yolu belirttikten sonra yapmamız gereken POJO oluşturmak olacak
+
+iletisim sekli:
+
+java app ----> hibernate ----> jdbc ----> database
+         <----           <----      <----
+--------------------------------------------------------------------------------------------------------------------
+
+JDBC -- Java Database Connectivity
+
+GİRİŞ
+Verilerimize programımızdan ulaşmak, programımız aracılığı ile kaydetmek, güncellemek, raporlamak için 
+türlü türlü işlemler yaparız. Eğer bir geliştirici iseniz geliştirdiğiniz programlarda bunu defalarca 
+farklı modüllerde uygulamak zorunda kalırız.
+Verilerimizide veritabanlarında saklarız temel düzeyde ise SQL komutları ile verilerimizi değerlendiririz
+
+JDBC
+Java ile ilişkisel bir veritabanına erişmek ve verisel işlemler yapmak istiyorsak program-veritabanı arasındaki 
+köprüdür JDBC. JDBC programdan bağımsız bir şekilde yazılarak farklı programlarda kullanılabilmektedir.
+JDBC ile herhangi bir veritabanına bağlanarak SQL komutları ile verilere erişebildiğimiz bir yapıdır. 
+Kullanılan veritabanına göre bağlantı çeşidini değiştirmemiz yeterli olmakta.
+
+
+java app ---> jdbc api ---> jdbc manager driver ---> jdbc driver ---> oracle 
+                                                ---> jdbc driver ---> sql server
+                                                ---> jdbc driver ---> odbc data source
+
+Java uygulamamız herhangi bir alanda olabilir.  Masaüstü uygulaması, FX, JSP, JSF gibi Java’nın herhangi dalında 
+uğraşıyor olursanız olun JDBC bize katkı sağlayacaktır.
+JDBC API sayesinde sorgularımızı programımızdan yazmaktayız.
+JDBC Driver Manager sayesinde farklı veritabanlarına bağlanabilmekteyiz.
+
+Genel Olarak
+JDBC kullanmaya başlamaya karar verdiysek genellikle yapacağımız adımlar şunlar. (Bu adımları tek tek ileriki 
+yazılarımda inceleyeceğiz)
+
+1- Veritabanımız ile bağlantı oluşturacağız.
+2- JDBC Driver’imizi yükleyeceğiz.
+3- Statement/PreparedStatement sorgularımızı oluşturacağız.
+4- Resultset oluşturacağız
+5- Ve son olarak oluşturduğumuz bağlantıyı/statementi/resulset’i kapatacağız.
+-----------------------------------------------------------------------------------------------------------------
+Hibernate kullanabilmek icin hibernate dosyalarini ve hangi veritabanina baglanacak isek onun connector'runu 
+classpath'e eklememiz gerekiyor. Biz burada sql server kullanacagimiz icin onun connector'runu ekledik 
+-----------------------------------------------------------------------------------------------------------------
+
+@GeneratedValue(strategy, generator)
+4 tane strateji vardir.
+auto : default olanidir. Hibernate kendi deger uretir
+identity : bildigimiz kullanim
+sequence : en performansli yapidir. Deger artiri bir sequence uzerinden yapilir
+table : gunumuzde cok kullanilmaz. Siradaki degeri belirtilen tablodan depolar, gunceller lazim oldugunda yeni degeri alir
+
+@SequenceGenerator kendi sequence'simizi olusturmaya yarar
+name = Bu adi generatedValue'in generator kismina yazariz
+sequenceName = sequence'simize verdigimiz addir. 
+allocationSize = Artirim sayisini belirtir. default deger 50'dir
+initialValue = Baslangic sayisini belirtir. Default 1'dir.
+catalog = katalogu belirtir
+schema = semayi belirtir
+
+ornek kullanim:
+@SequenceGenerator(
+	    name = "generator"
+        sequenceName = "POJO_ID_SEQ",
+        allocationSize = 1
+)
+
+@GeneratedValue(
+        strategy = GenerationType.SEQUENCE,
+        generator = "generator"
+)
+@Id
+private int id;
+---------------------------------------------------------------------------------------------------------------------
+
+index kullanimi:
+
+@Table anatasyonun icindedir
+
+@Table(
+name = "City", 
+indexes = {@Index(name = "IX_CityName", columnList = "cityName"), @Index(name = "IX_CityName_CountryCode", columnList = "cityNsme, countryCode", unique = true)})
+
+birden fazla index tanimlayabiliriz columnList ile hangi kolona gore index yapilacak onu belirleyebiliriz.
+unique = true ile unique index tanimlayabiliriz
+-------------------------------------------------------------------------------------------------------------------------
+
+
