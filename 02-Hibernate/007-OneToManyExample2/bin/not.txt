@@ -1,0 +1,30 @@
+CREATE DATABASE HIBERNATE
+
+USE HIBERNATE
+
+DROP TABLE IF EXISTS Kullanici
+CREATE TABLE Kullanici(
+	id INT PRIMARY KEY IDENTITY(1,1),
+	kullanici_adi VARCHAR(50) DEFAULT NULL,
+	kullanici_soyadi VARCHAR(50) DEFAULT NULL,
+	uyelik_tarihi DATE DEFAULT NULL,
+)
+
+DROP TABLE IF EXISTS Telefon
+CREATE TABLE Telefon(
+	id INT PRIMARY KEY IDENTITY(1,1),
+	telefon_no CHAR(11) UNIQUE DEFAULT NULL,
+	telefon_turu VARCHAR(50) DEFAULT NULL,
+	kullanici_id INT NULL FOREIGN KEY REFERENCES Kullanici(id) ON DELETE NO ACTION ON UPDATE NO ACTION
+)
+
+Burada ki senaryomuzda bire-cok iliskimiz var. Telefon ve kullanicilar. Burada ayni many-to-many iliskilerde
+oldugu gibi bir ara tablo olusturduk onun uzerinden islemler yaptik
+
+Buradaki senaryomuzds onceki projede ki senaryo ile ayni lakin tablolarda degisiklik yaparak mappedBy 
+kullanimini gorduk.
+Bu senaryoda ara tablo kullanmadik. Telefon tablosuna kullanicilari ekleyerek ara tablodan kurtulduk.
+Ara tablo demek fazladan sql sorgusu demek bu da performans kaybi demek. Tablo sayisi ne kadar az ise performans
+o kadar iyi olur.
+
+Bu proje onceki projeye gore daha performansli calisir. Daha az sql komutu var cunku

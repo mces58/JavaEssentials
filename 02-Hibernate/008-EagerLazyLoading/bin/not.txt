@@ -1,0 +1,49 @@
+CREATE DATABASE HIBERNATE
+
+USE HIBERNATE
+
+DROP TABLE IF EXISTS Egitmen
+CREATE TABLE Egitmen (
+	id INT NOT NULL primary key IDENTITY(1,1),
+	egitmen_adi VARCHAR(45) DEFAULT NULL,
+	egitmen_soyadi VARCHAR(45) DEFAULT NULL,
+	email VARCHAR(45) DEFAULT NULL,
+)
+
+DROP TABLE IF EXISTS Kurs
+CREATE TABLE Kurs (
+	id INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+	kurs_adi VARCHAR(128) DEFAULT NULL UNIQUE,
+	egitmen_id INT DEFAULT NULL FOREIGN KEY REFERENCES Egitmen(id) ON DELETE NO ACTION ON UPDATE NO ACTION
+)
+--------------------------------------------------------------------------------------------------------------
+
+Veri alirken veya veri yuklerken, soru her seyi almamiz gerekir mi ?
+
+eger her seyi cekecek isek eager
+eger ki sadece talep uzerine veri cekilecek isek lazy kullanilmalidir.
+
+Öyleyse, bir eğitmenimiz olduğunu hayal edin. Bir eğitmenin bir
+ders listesi vardır. Yükleme türüne bağlı olarak, eager yüklemeyle, tüm bağımlı varlıklarınızı yükler.
+Böylece, eğitmen ve tüm derslerini bir kerede yükleyecektir. Yani, veritabanına hızlı bir atış yapacak, 
+tüm verileri alıp geri getirecek.
+Şimdi, bu sadece küçük bir eğitmene ve az sayıda kursa sahipseniz, bu büyük bir sorun olmayabilir, ancak,
+uygulamanızın performansını gerçekten etkileyebilecek bir sürü veri olugunu hayal ediniz o zaman performans kaybi olacak
+
+lazy loading boyle degildir. istek oldugu surece yukleme yapar.
+Genellikle lazy loading tercih edilir
+------------------------------------------------------------------------------------------------------------------
+
+Fetch Type Nedir?
+Aralarında ilişki bulunan Entity sınıflarından bir tarafın yüklenme durumunda diğer tarafın yüklenme stratejisini 
+belirlememizi sağlar. Hibernate de 2 adet fetch type vardır. Bunlar:
+
+1-)Eager(Ön Yükleme)
+2-)Lazy(Tembel/Sonradan Yükleme)
+
+* Eğer @OneToOne ve @ManyToOne ilişkileri kullanıyorsak FetchType olarak Eager kullanmamız daha doğru olur. 
+Yani bir tane Entity nesnesi üzerinden ilişki kurulduğundan ön yükleme yapmak performans açısından sorun oluşturmaz.
+
+* Eğer ki @OneToMany ve @ManyToMany ilişki kullanıyorsak FetchType olarak Lazy kullanmamız daha doğru olur. 
+Yani birden fazla ilişkili nesne olduğundan ön yükleme yapmamız performans açısından kayba neden olur. 
+Bunun için ihtiyaç duyulduğunda yüklemek daha doğru olur.
