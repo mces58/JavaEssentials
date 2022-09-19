@@ -1,0 +1,48 @@
+CREATE DATABASE HIBERNATE
+
+USE HIBERNATE
+
+DROP TABLE IF EXISTS Bilet
+CREATE TABLE Bilet(
+	id INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+	satis_tarihi DATETIME DEFAULT NULL,
+	koltuk_no INT DEFAULT NULL,
+	bilet_fiyati SMALLMONEY DEFAULT NULL
+)
+
+DROP TABLE IF EXISTS Musteri
+CREATE TABLE  Musteri (
+	id INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+	musteri_adi VARCHAR(45) DEFAULT NULL,
+	musteri_soyadi VARCHAR(45) DEFAULT NULL,
+	bilet_id INT NOT NULL FOREIGN KEY REFERENCES Bilet(id) ON DELETE NO ACTION ON UPDATE NO ACTION
+)
+
+Bu projede ki senaryo onceki projedeki senaryo ile tamamen ayni tek fark silme ve ekleme islemlerinde gorecegiz.
+cascade type ozelliginiz isleyecegiz
+-----------------------------------------------------------------------------------------------------------------------
+
+Java da cascade
+Cascade JPA standartıdır. Java sınıflarımızdaki ilişkilerin davranışlarını cascade niteliğini kullanarak ayarlarız. 
+“İlişki davranışları” kavramını biraz açıklayacak olursak, bir değer silinirse o veri ile ilişkili olan kayıtların 
+etkilenmesini ya da etkilenmemesi işlemlerini Java nesneleri olarak yönetilmesini sağlamaktayız. Bu JPA teknolojisi 
+bu davranışları Java nesneleri üzerinden yöneterek veritabanına ulaşmadan yormadan halleder.
+
+Cascade Tiplerini Açıklayalım:
+* PERSIST
+İlişki persist olarak tanımlandıysa kaydedilen nesnenin alt nesneside kaydedilir.
+
+* MERGE
+İlişki merge olarak tanımlandıysa nesne merge edilirse ilişkili olan nesne de merge edilir.
+
+* REMOVE
+İlişki remove olarak tanımlandıysa nesne silinirse ilişkili olan nesne de silinir.
+
+* REFRESH
+İlişki refresh olarak tanımlandıysa nesne yenilenirse bağlı olan nesne de yenilenir.
+
+* ALL
+İlişki all olarak tanımlandıysa yukarıdaki tüm işlemler için birlikte yapılır.
+
+Örnek vermek gerekirse Yazar ve Kitap ilişkisinde bir yazar silinirse onunla ilgili olan 
+tüm kitaplar birlikte kaydedilir güncellenir veya silinir.

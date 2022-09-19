@@ -1,0 +1,25 @@
+CREATE DATABASE HIBERNATE
+
+USE HIBERNATE
+
+DROP TABLE IF EXISTS Bolum
+CREATE TABLE Bolum(
+	id INT PRIMARY KEY IDENTITY(1,1),
+	bolum_adi VARCHAR(50) DEFAULT NULL
+)
+
+DROP TABLE IF EXISTS Ogrenci
+CREATE TABLE Ogrenci(
+	id INT PRIMARY KEY IDENTITY(1,1),
+	ogrenci_adi VARCHAR(50) DEFAULT NULL,
+	ogrenci_soyadi VARCHAR(50) DEFAULT NULL,
+	bolum_id INT NULL FOREIGN KEY REFERENCES Bolum(id) ON DELETE NO ACTION ON UPDATE NO ACTION
+)
+
+Burada ki senaryomuzda bire-cok iliskimiz var. Bir bolumun birden fazla ogrencisi olabilirken 
+bir ogrencinin bir bolumu olabilir. Dolayisiyla bire-cok iliski vardir.
+
+Onceki projeden farki olarak cift yonlu hale getirdik bunu da manyToOne ile yaptik
+bi-direction(cift yonlu)
+
+bolum <--> ogrenci
