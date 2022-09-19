@@ -1,0 +1,32 @@
+CREATE DATABASE HIBERNATE
+
+USE HIBERNATE
+
+DROP TABLE IF EXISTS Kurs
+CREATE TABLE Kurs(
+	id INT PRIMARY KEY IDENTITY(1,1),
+	kurs_adi VARCHAR(50) DEFAULT NULL UNIQUE
+)
+
+DROP TABLE IF EXISTS Ogrenci
+CREATE TABLE Ogrenci(
+	id INT PRIMARY KEY IDENTITY(1,1),
+	ogrenci_adi VARCHAR(50) DEFAULT NULL, 
+	ogrenci_soyadi VARCHAR(50) DEFAULT NULL,
+	ogrenci_emaili VARCHAR(50) DEFAULT NULL
+)
+
+DROP TABLE IF EXISTS Kurs_Ogrenci
+CREATE TABLE Kurs_Ogrenci(
+	kurs_id INT NOT NULL FOREIGN KEY REFERENCES Kurs(id) ON DELETE NO ACTION ON UPDATE NO ACTION,
+	ogrenci_id INT NOT NULL FOREIGN KEY REFERENCES Ogrenci(id) ON DELETE NO ACTION ON UPDATE NO ACTION,
+	PRIMARY KEY(kurs_id, ogrenci_id)
+)
+
+Buradaki konsept many to many. Coga cok iliskilerde genelde ara tablo vardir. Ve onun uzerinden bagimliliklar
+yonetilir. Bu ara tablonun hibernate ki adi join table. bunu kullanarak many to many iliskiler kurabiliriz.
+Burada kurs ile ogrenci arasinda iliski kurduk. Sonucta bir kursta birden fazla ogrenci olabilirken, bir ogrencide
+birden fazla kursa gidebilir.
+
+Silme islemine baktigimizda ise bir kursu sildigimizde ogrenciyi silmememiz gerekir ayni sekilde bir ogrenciyi sildigimizde
+ise kursun bilgilerini silmememiz gerekir dolayisiyla cascade type'da remove olamamlidir
