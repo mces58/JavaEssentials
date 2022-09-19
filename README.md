@@ -5,3 +5,6 @@
 
 ## 01-Spring
 ***Bu bölümde Spring Framework geliştirme ortamı ve mimarisini detaylarıyla inceledim ve anlatmaya çalıştım.***
+
+## 02-Hibernate
+***Bu bölümde Hibernate teknolojilerini kullanarak veri erişim işlemlerini Java tabanlı olarak gerçekleştirmeyi anlatmaya çalıştım.***
