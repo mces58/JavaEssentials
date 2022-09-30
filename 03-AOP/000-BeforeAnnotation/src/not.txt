@@ -1,0 +1,132 @@
+aop nedir?
+
+Her ne kadar tekrarlı kod yazmaktan kaçınsakta istemeyerek de olsa birçoğumuz bu hataya düşebiliyoruz. 
+Uygulama büyüyor ve büyüyen bu uygulamalarımızın bakımı zorlaşabiliyor, kodun okunurluğu zamanla azabiliyor.
+
+Kaliteli kod yazarak proje geliştirmek için temelde kodun tekrar kullanılabilirliği (reusability), okunabilirliği (readability), 
+modülerliği (modularity) ve bakımının yapılabilirliği (maintainability) özelliklerine dikkat ederek uygulama geliştirmemiz gerekir. 
+Geliştirdiğimiz modüllerde ortak olarak kullandığımız bazı yapılar vardır.0
+Bunlar Caching, Exception Handling, Logging, Performance, Transaction, Validation vb. Bu işlemler birer Cross Cutting Concern.
+
+Cross Cutting Concerns Nedir?
+Cross Cutting Concerns’ün Türkçe anlamı “Kesişen İlgiler” ya da “Çapraz Kesen İlgiler” diye geçmektedir. 
+Cross Cutting Concern denilmesinin sebebi katman bağımsız olması, projenin istenilen yerinde kullanılması 
+ile bulunduğu yerden soyutlanmış olmasından kaynaklanmaktadır.
+
+Kesişen ilgileri geliştirdiğimiz modüllerde nasıl kullanıyoruz ve nasıl kullanmamalıyız gelin birlikte bakalım.
+
+Bir metodu ele alalım. Her business işleminde ortak olarak yaptığımız bazı işlemler vardır. Bunlar, metoda ilk istek 
+atıldığında önce yetki kontrolü yap, ardından eğer yapılması gereken validation işlemleri varsa onları yap, logla, 
+cache ekle ya da cache den sil, bir hata aldığımızda exception handling işlemlerini gerçekleştir. Okurken bile 
+ne kadar çok işlem yaptığımızın farkına vardığınızı düşünüyorum :)
+
+İşte tekrarlı kullandığımız bu işlemler bizim için birer Cross Cutting Concern oluyor. Kod üzerinde baktığımızda;
+
+public IResult Add(Product product) {
+	try {
+		// Yetki kontrolü yap.
+         // Validation işlemlerini yap.
+
+         _productDal.Add(product);
+
+         // Yaptığın işlemi logla.
+         // Yeni ürün ekleyince eski cache'i sil ya da güncelle.
+         return new SuccessResult(message:Message.ProductAdded);
+    }
+    catch (Exception ex) {
+         // Exception işlemlerini yap.
+         throw new Exception(ex.Message);
+    }
+}
+
+Yukarıdaki örnekte yapılan işlemler sadece bir metot içindi ve benzer işlemleri projenizin birçok yerinde yapmanız gerekir. 
+AOP ise bize kesişen bu ilgilerin birbirinden ayrılması gerektiğini söylemektedir. Bu sayede sınıfın kendi sorumluluğunu 
+yerine getirmesini (single responsibility principle), kodun daha okunur ve anlaşılır yapıda olmasını, aynı kodları çok 
+daha kısa ve kolay bir şekilde tekrar kullanılabilirliğini sağlayabiliriz.
+
+AOP Kullanım Durumları
+En yaygın:
+  logging , security , transactions
+
+Denetim günlüğü (Audit logging):
+  kim(who), ne(what), ne zaman(when), nerede(where)
+
+İstisna işleme (Exception handling):
+  istisnayı günlüğe kaydedin ve DevOps ekibini SMS / e-posta yoluyla bilgilendirin
+
+API Yönetimi:
+  bir yöntemin kaç kez kullanıcı olarak adlandırıldığı
+  analitik: yoğun zamanlar nedir? ortalama yük nedir? en iyi kullanıcı kim?
+
+
+Avantajlar
+* Yeniden kullanılabilir modüller
+* Kod karmaşasını çözün
+* Kod dağılımını çöz
+* Seçici olarak uygulanır yapılandırmaya dayalı
+                                       
+Dezavantajları
+* Çok fazla yön ve uygulama akışı zor takip et
+* Küçük performans görünüş için maliyet uygulamak (çalışma zamanı dokuma)
+
+Advice Types
+* Before: yöntemden önce çalıştırın
+* After Finally: yöntemden sonra çalıştırın (sonunda)
+* After Returning: yöntemden sonra çalıştırın (başarılı yürütme)
+* After Thowing: yöntemden sonra çalıştırın (istisna atılırsa)
+* Around: yöntemden önce ve sonra çalıştırın
+
+
+2. tanım:
+Aspect Oriented Programming programlamada modülerliği arttırmayı hedefleyen bir yaklaşımdır . 
+Uzun ve karmaşık kodlar zamanla anlaşılması ve yönetilmesi zor bir hale gelmektedir . Örneğin; bir Employee nesnesi alip JPA 
+kullanarak veritabanına kaydeden bir metod olsun . Bu metodda session açma , transaction başlatma , veritabanına yazma ,
+transaction ' bitirme ve session'i kapatma gibi işlemler olacaktır . Ancak yapılacak esas iş veritabanına kaydetmedir . 
+Diğer işlemler ise gereklidir ancak kalabalık oluşturacaktır .
+Birbirlerini etkileyen fakat birbirleri ile doğrudan bağlantısı olmayan işlemleri ( cross - cutting concerns ) 
+birbirinden ayırabiliriz . Bu noktada AOP devreye girecektir.
+Proxy Nedir ? — Proxy Server Nedir?
+
+Proxy dilimizde vekil anlamına gelmektedir. Bu proxy kelimesini en çokta yasaklı sitelere giriş yapmak isteme sebebimizden 
+dolayı duymuşuzdur. Wikipedia gibi sitelere yasaklı olsada bu sayede giriş yapabiliyorduk.
+
+Kullanıcı ilgili proxy service’ine gireceği yasaklı siteyi komut olarak belirtir. Proxy service’i belirtilen siteye 
+bizim için girer, içeriği çeker ve ilgili kullanıcının tarayıcısına yansıtır. Bu sayede yasaklı bir siteye girebiliriz. 
+Ayrıca hiç bir zaman ip’mizi yansıtmamış oluruz. Kendimizi gizlemiş oluruz. Çünkü biz gerçekten de o siteyi hiç ziyaret etmiyoruz.
+
+Proxy service’leri çok hızlıdırlar. VPN ve Proxy Service’leri birbirlerine çok benzerlerdir. VPN’in farkı şifreleme 
+mantığı ile çalışmasıdır.
+
+Asıl konumuza geçmeden önce Proxy ve Proxy Server kavramlarını çok kısa ele aldık.
+Şimdi ise proxy design pattern’inden biraz bahsedelim.
+
+Proxy design pattern’da bir interface bulunur. Bu interface’i implemente eden gerçek bir sınıfımız vardır. 
+Bu gerçek sınıfta o service ile ilgili ne logic varsa o bulunur. Ancak bu service nesnesine ulaşmadan önce 
+veya sonra birşeyler yapmak istersek Proxy design pattern’i kullanırız. Interface’imizi implemente eden 
+Proxy bir sınıf yaratırız. Bu proxy sınıf gerçek service call edildiğinde araya girerek bizim çeşitli işlemleri 
+yapabilmemizi sağlar.
+
+Diyelim ki Settings ile ilgili logicleri tutan bir SettingsServiceImpl’ımız var. Ayrıca
+
+Proxy, bir nesneye erişimi kontrol etmek için kullanırız. Proxy, sayesinde istek orijinal nesneye ulaşmadan önce veya 
+sonra bir şeyler gerçekleştirmenize olanak tanır.
+
+Proxy, bir client tarafından kullanılan gerçek service objesinin yerine geçen proxy bir obje sağlayan structural design pattern.
+Bir proxy, istemciden istekleri alır, bazı işler yapar ve ardından isteği gerçek service objesine iletir.
+
+Spring Proxy
+
+Spring, oluşturmuş olduğumuz bean’ler için onun ile aynı interface’i implemente eden proxybean’ler oluşturuyor. 
+Eğer o sınıfın bir interface’i yoksa o sınıfı inheritance ile proxybean’ini oluşturuyor.
+
+Bu proxybean içerisinde beforeAspect’lerimizi call ediyor. Daha sonra ilgili
+logic’imizin bulunduğu yani gerçek bean’in methodunu call ediyor ve
+afterAspect’lerimizi call ederek işlemi bitiriyor.
+
+Bu aspect’ler içerisinde loglama , transaction vb. şeyleri yönetiyor.
+Mesela beforeaspect’te transaction.begin() yapıyor. Sonra hata durumuna göre afteraspect’te transaction’i commit veya rollback yapıyor.
+
+Bu proxy’ler bizim için interceptor görevi görüyorlar. Araya girebilmemizi sağlıyorlar.
+Zaten spring kendisi de kullanıyor.
+Biz bir bean’in methodunu çağırdığımız da bu proxy interceptor’lar sayesinde
+araya giriliyor. İlk proxy beanin methodu daha sonra gerçek beanin methodu çağrılarak akış tamamlanıyor.
