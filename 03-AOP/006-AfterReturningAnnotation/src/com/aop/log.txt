@@ -1,0 +1,3 @@
+Product: Product [name=Telefon, stoctAmount=5, unitPrice=7000.0]
+Pointcut: execution(Product com.aop.business.Manager.findProduct(int))
+Signature: com.aop.business.Manager
