@@ -9,6 +9,8 @@
 ## 02-Hibernate
 ***Bu bölümde Hibernate teknolojisini kullanarak veri erişim işlemlerini Java tabanlı olarak gerçekleştirmeyi anlatmaya çalıştım.***
 
-## 03 Aspect Oriented Programming-AOP
+## 03-Aspect Oriented Programming (AOP)
 ***Bu bölümde Java teknolojilerinden biri olan AOP anlatmaya çalıştım.***
 
+## 04-Maven
+***Bu bölümde Java'nın büyük projelerde Maven ile bize sağladığı kolaylığı anlatmaya çalıştım.***
