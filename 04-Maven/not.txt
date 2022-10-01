@@ -1,0 +1,122 @@
+Maven nedir ?
+Maven genellikle Java platformunda yer alan komutların derlenmesi sırasında kullanılan otomasyon ve inşa aracıdır.
+Java programlama dili ile uygulama geliştirirken çeşitli kütüphaneler kullanamak isteyebiliriz.
+Örneğin; Java ile PDF dosyası oluşturmak için Apache PDFBox, iText, JPOD gibi çeşitli kütüphaneleri kullanabiliriz.
+Her kütüphane için gerekli olan JAR dosyalarını indirmek ve projeye uygun olarak yerleştirmek (classpath) gerekir.
+Ancak sadece kütüphanelerin indirilmesi ve projeye dahil edilmesi yetmeyecektir.
+Ayrıca her yeni güncelleme sonrası güncel dosyaların takip edilmesi gerekecektir.
+Maven proje dosyasına eklenen bağımlılıklar ile kolay bir şekilde indirmeyi ve proje yerleştirmeyi sağlar.
+Kullanılan kütüphaneler proje dosyasında yer aldığından taşınabilirlik sağlanmış olur.
+Sunmuş olduğu dizin yapısı sayesinde diğer geliştiricilerin projeyi takibini kolaylaşır.
+
+Maven’in Amaçları Nelerdir ?
+* Projenin geliştirme adımlarını kolaylaştırmak
+* Standartlaştırma
+* Projenin niteliklerini bilgi olarak sağlamak
+* Tekrar kullanılabilirlik
+* Kararlılık
+* Bağımlılık yönetimi
+* Ölçeklenebilirlik
+
+Ne işe yarar bu Maven ?
+Maven, proje geliştirirken proje içerisinde bir standart oluşturmamızı, geliştirme sürecini basitleştirmemizi, 
+dokümantasyonumuzu etkili bir şekilde oluşturmamızı, projemizdeki kütüphane bağımlılığını ve IDE bağımlılığını 
+ortadan kaldırmamızı sağlayan bir araçtır.
+
+Maven’in faydaları nelerdir ?
+Maven, proje kalıpları(pom.xml) sayesinde IDE bağımlılığı olmadığından dolayı kurulumda esneklik sağlar. Yeni bir proje 
+oluşturacağınızda Maven proje kalıplarını kullanabilirsiniz, bu kalıplar birer standart haline geldiği için tüm IDE ‘lerde 
+desteklenmektedir.
+
+Projede kullanılacak tüm kütüphaneler ve eklentiler POM(Project Object Model) dosyasından kolayca yönetilebilmektedir. 
+Maven, kütüphane dosyalarını kendi repository sunucularında barındırır. Projede kullanmak istediğiniz kütüphane 
+dosyalarını ilk olarak sizin local repository klasörünüzde arar, eğer bulamazsa kendi sunucularında arama yapar, 
+eğer kendi sunularında da bulamazsa sizin tanımlayacağınız bir sunucu adresinden dosyayı sizin local klasörünüze 
+indirir ve projeniz içerisinde kullanabilmenizi sağlar. Ayrıca bir kütüphane başka kütüphanelere bağımlıysa bu bağımlı 
+olduğu kütüphaneleri de indirir ve projenize ekler.
+
+Projenizin build ya da deploy yapılandırmalarını POM dosyasından yönetebilirsiniz. Büyük çaplı bir projenin, farklı 
+sunucu sistemlerinde ya da farklı veri tabanlarında eş zamanlı olarak çalışması gerekebilir. Bunun için her güncelleme 
+sırasında farklı yapılandırma ayarlarıyla bu sistemleri güncellememiz gerekir. Her sistem için yapılandırma dosyalarını 
+baştan düzenlemek oldukça yorucu bir iş. Ancak POM dosyasında tanımlanacak yapılandırma ayarları işimizi görecektir. 
+Sadece yapılandırma adını değiştirerek proje çıktısını farklı sistemlere uygun hale getirebilirsiniz.
+
+Sürüm yönetimi, her Maven projesinin bir grup id ‘si, bir yapı id ‘si ve bir de sürüm numarası vardır. Projenin farklı 
+sürümlerini saklayabilir ve bunları daha sonra yeni projelerde kullanabiliriz.
+
+Maven nasıl çalışır ?
+Maven ilk olarak ayar dosyasını (config file – pom.xml) okur.
+
+Gerekli olan bağımlılıkları yerel depoda (yerel önbellek) arar.
+
+Windows için %homepath%\.m2 klasöründe arar.
+
+Linux için $HOME/.m2 klasöründe arar.
+
+Dosyalar yerel depoda yoksa uzak depoda (Maven Central Repository – https://repo.maven.apache.org/maven2/) arar.
+
+Dosyalar uzak depoda varsa yerel depoya indirir ve projeye dahil eder.
+
+Maven ayrıca projeye dahil edilen her kütüphanenin ihtiyaç duyduğu bağımlılıkları da indirir.
+
+Maven dizin yapısı nedir ?
+Proje geliştirirken her geliştirici farklı dizin yapısını kullanabilir.
+Farklı geliştiriciler tarafından belirlenen farklı dizin yapıları projenin başka kişi tarafından takip edilmesini zorlaştırır.
+Maven sağladığı standart dosya-dizin yapısı sayesinde kolay bir şekilde projelerin takip edilmesini sağlar.
+Bu yapı sayesinde her geliştirici kolay bir şekilde ilgili dosyaya erişim sağlar.
+Ayrıca bir çok IDE (Netbeans, Eclipse, IntelliJ) bu dizin yapısın destekler.
+
+* /src/main/java – Java komutları yer alır.
+* /src/main/resource – Ayar dosyaları yer alır.
+* /src/main/webapp – JSP, JSF, Resim, CSS, JavaScript gibi web dosyaları yer alır.(WEB-INF, META-INF)
+* /src/test – Birim testleri yer alır.
+* /target – Derlenen komutların çıktısı yer alır.
+
+POM Nedir ?
+Proje Nesnesi Modeli (Project Object Model) veya POM, Maven’deki temel iş birimidir. Proje kurmak için Maven 
+tarafından kullanılan proje ve yapılandırma detayları hakkında bilgi içeren bir XML dosyasıdır.
+
+
+POM, Maven 1’deki project.xml’den Maven 2’de pom.xml’ye dönüştürüldü. Bir görevi veya hedefi yürütürken; 
+Maven, geçerli dizinde POM’u arar. POM’u okur, gerekli yapılandırma bilgisini alır, sonra hedefi yürütür.
+
+POM’de belirtilebilecek bazı yapılandırmalar proje bağımlılıkları, çalıştırılabilecek eklentiler veya hedefler, 
+yapı profilleri, proje sürümü, açıklama, geliştiriciler, posta listeleri ve benzerleri gibi diğer bilgiler de belirtilebilir.
+
+Project Object Model (POM.xml) proje talimatlarını içerir ve üç kısımdan oluşur.
+
+1- Project Meta Data,
+
+* Proje adı
+* Proje sürümü
+* Proje çıktısı-türü (jar, web)
+
+2- Dependencies
+
+* iText
+* Apache PDFBox
+* Spring
+* Hibernate
+
+3- Plugins
+
+Projeye ait doküman hazırlama, komut analizi gibi özel görev oluşturmak için kullanılır.
+
+Maven archetype nedir ?
+Hızlı bir şekilde proje iskeleti oluşturmak için kullanılan bir araçtır.
+Aracı kullanmak için archetype:generate komutu kullanılabilir.
+Komut çalıştırıldığında sırayla kullanılacak hazır şablonu, proje adını, proje sürümünü isteyecektir.
+Maven destekleyen bir IDE’de(Netbeans, Eclipse, IntelliJ vb.) kullanılabilir.
+Bazı hazır archetype isimleri aşağıda yer almaktadır.
+
+* maven-archetype-archetype
+* maven-archetype-j2ee-simple
+* maven-archetype-mojo
+* maven-archetype-plugin
+* maven-archetype-plugin-site
+* maven-archetype-portlet
+* maven-archetype-quickstart
+* maven-archetype-simple
+* maven-archetype-site
+* maven-archetype-site-simple
+* maven-archetype-webapp
