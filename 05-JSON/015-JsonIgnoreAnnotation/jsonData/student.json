@@ -1,0 +1,13 @@
+{
+  "firstName" : "Can",
+  "lastName" : "Eser",
+  "active" : true,
+  "address" : {
+    "street" : "Kizilirmak",
+    "city" : "Sivas",
+    "state" : "Zara",
+    "zip" : "19103",
+    "country" : "Turkey"
+  },
+  "languages" : [ "Java", "C && C++", "Python", "Javascript" ]
+}
