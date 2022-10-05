@@ -1,0 +1,207 @@
+JSON Nedir ve Ne İçin Kullanılır?
+JSON Nedir ve Ne İçin Kullanılır? sorusu modern web geliştirmede ustalaşmak isteyenler için önemlidir çünkü JSON, nesnelerin 
+interneti (IoT) ve sosyal medya uygulamaları gibi alanlarda sıklıkla kullanılmaktadır.
+
+Web uygulamalarında kullanıcıların değiştirdikleri ayarları her seferinde yenilemelerine gerek kalmaması için, kullanıcı deneyimi 
+açısından birçok geçici yapılandırmanın veya verinin depolanması gerekir.
+
+Bu değişikliklerin veya geçici verilerin depolanmasında Oracle veya Mariadb gibi veritabanları kullanılabilir ama bu verimli 
+bir çözüm değildir. Verileri bir metin dosyası olarak saklamak depolama sorununu çözer. Ancak bu aşamada verileri farklı 
+uygulamalar arasında kolaylıkla paylaşabilecek bir tür evrensel formata ihtiyaç duyulur.
+
+Veri Serileştirme denen işlem yapılandırılmış verileri, gerektiğinde orijinal yapısının kurtarılmasına olanak tanıyan bir 
+biçimde paylaşılmasına veya saklanmasına olanak tanıyan bir biçime dönüştürmek anlamına gelir. JSON; veri serileştirme için 
+en yaygın kullanılan format olarak bu noktada karşımıza çıkar.
+
+JSON Nedir?
+JSON (JavaScript Object Notation), basit veri yapılarını temsil etmek için tasarlanmış bağımsız bir veri değişim formatıdır. 
+Esas olarak iki sistem arasındaki veri alışverişi için kullanılır. Örneğin JSON kullanarak sunucu ile web uygulaması 
+arasında veri aktarabilirsiniz.
+
+Hemen hemen her ana dil, JSON dizelerini o dildeki nesnelere veya sınıflara ayrıştırmak için bir tür kitaplığa veya yerleşik 
+işlevselliğe sahiptir. Bu, bir programlama dili içinde JSON verileriyle çalışmayı son derece kolaylaştırır.
+
+JSON formatı 2000’lerin başında Douglas Crockford tarafından belirlenmiştir. Aralık 2005’te Yahoo! web hizmetlerinden 
+bazılarını JSON biçiminde sunmaya başlamıştır ve JSON, 2013 yılında bir ECMA standardı haline gelmiştir.
+
+JSON’un Özellikleri
+JSON’da; cep telefonları, web tarayıcıları, sunucular ve IoT cihazları dahil olmak üzere çeşitli kaynaklardan ve 
+cihazlardan gelen yarı yapılandırılmış veriler “events” adı verilen mesajlar olarak toplanır, gruplar halinde mantıksal 
+olarak düzenlenir ve ardından bir veri hattı aracılığıyla bir veri platformuna beslenir. JSON’un özelliklerini 
+şu şekilde sıralayabiliriz:
+
+* Yapılandırılmış verileri bir ağ bağlantısı kullanarak iletmenize ve serileştirmenize olanak tanır.
+* Veri yapısından oluşan veri nesnelerini iletmek için insanlar tarafından okunabilir metinler kullanır.
+* JavaScript programlama diline dayanır.
+* Tarayıcı eklentileri ve web siteleri gibi JavaScript uygulamalarıyla kullanılabilir.
+* Tüm tarayıcıları destekler. Çok sayıda işletim sistemiyle uyumludur.
+* Okuması, yazması, oluşturması ve yönetmesi kolaydır.
+* API’ler ve web hizmetlerinde verileri biçimlendirmek ve aktarmak için kullanır.
+* Tüm önemli JavaScript çerçeveleri tarafından desteklenir
+* Orijinal olarak JavaScript spesifikasyonunun (ECME-Script) bir alt kümesi olarak türetilmiştir.
+* JSON’daki veri yapıları, anahtar / değer çiftlerine dayanır.
+* JSON sözdizimi, verilerin kolay ayrıştırılmasını ve daha da hızlı uygulanmasını sağlar.
+* Çoğu modern programlama dilinde ayrıştırılabilir. Metin tabanlı yapısı nedeniyle Javascript, C, C ++, C #, Perl, Java, 
+Python, Php gibi programlama dilleri ve platformları JSON’u destekler.
+JSON, çok karmaşık büyük verileri işlemek için uygun değildir. Zengin metin veya resimler gibi multimedya biçimlerini desteklemez.
+
+JSON Veri Türleri ve Sözdizimi Kuralları
+Tarayıcı uzantısını ve web sitelerini içeren JavaScript tabanlı uygulamalarda yaygın olarak kullanılan JSON çok sayıda veri türünü destekler:
+
+* Sayı
+* Dize (String) -Unicode karakter dizesi
+* Boolean (true / false)
+* Dizi (Array) – Kapalı parantez [] içinde yer alan veri koleksiyonları ve / veya listeleri
+* Nesne – Sırasız anahtar / değer çiftleri
+* Null – Boş değer
+
+JSON, dilden bağımsızdır ancak C ailesi dillerini kullanan programcıların aşina olduğu içeriği kullanır.
+
+JSON nesneleri programlama ihtiyaçlarınıza göre düzenlenebilir. Nesneler, anahtarları parametre olarak kullanmamıza ve 
+çeşitli durumlar için yeniden kullanılabilir tanımlar oluşturmamıza yardımcı olurlar.
+
+JSON’un yapısını tanımlayan bazı kurallar söz konusudur: {"FirstName": "Liza", "lastName": "Bon", "age": 35, "e-posta": "lizabon@example.com"}
+
+* Temel olarak, bir JSON nesnesi küme parantezleri “{}” ile tanımlanır. Sol küme parantezi 
+“{” nesnenin başlangıcını ve sağ küme parantezi “}” nesnenin sonunu temsil eder.
+* JSON içindeki veriler, anahtar / değer çifti şeklinde düzenlenir. Sol taraf anahtarı temsil eder ve sağ taraftaki veriler 
+değeri temsil eder. Hem anahtar hem de değer iki nokta üst üste “:” işareti ile ayrılır.
+* Anahtarların metin ve geçerli JSON veri türleri olarak kabul edilen değerler olması gerekir.
+* Her bir anahtar / değer çifti kümesi, virgül “,” kullanılarak diğerinden ayrılır.
+* Diziler, bir JSON nesnesi içinde köşeli parantezler “[]” kullanılarak tanımlanır.
+
+JSON Ne İçin Kullanılır?
+JSON çok sayıda uygulamada kullanılabilir. Özellikle sunucular ve web uygulamaları arasında veri aktarımı 
+için kullanımı yaygındır. Bunun nedeni, bu uygulamaların genellikle verileri yalnızca metin olarak alabilmesi 
+ve JSON’un metin tabanlı olmasıdır.
+
+Her tür yapılandırılmış verinin iletilmesine ve serileştirilmesine yardımcı olan JSON; Twitter, Facebook ve 
+NASA tarafından sağlanan API’lerle çalışırken de kullanılır. NASA, bilimsel ve astronomik verileri JSON 
+formatında ücretsiz olarak halka açık bir API aracılığıyla sunar, bu verilerle Python kullanarak 
+çalışabilirsiniz. İnternetteki verilerle çalışmak için, bir ağ bağlantısı üzerinden veri gönderip almanıza 
+olanak tanıyan istek kitaplığını kullanabilirsiniz. Aşağıdaki örnekte, NASA API’den veri almak ve depolamak 
+için istek kitaplığının kullanıldığını görebilirsiniz.
+
+import requests
+r = requests.get("https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY")
+NASA = r.json()
+print(NASA)
+
+JavaScript ile çok iyi entegre olan JSON tarayıcı eklentileri içeren JavaScript tabanlı uygulamalar yazmak için de kullanılır. 
+JSON, JavaScript’in yalnızca bir alt kümesidir, bu da JSON’da yazdığınız her şeyin geçerli JavaScript olduğu 
+anlamına gelir, JavaScript’ten türetildiği için, çoğu çağdaş programlama dili JSON verilerini ayrıştırabilir ve oluşturabilir.
+
+JSON, veri aktarımını kolaylaştırdığı için veri ağırlıklı sosyal medya uygulamaları arasında da popülerdir. 
+Instagram’da JSON verileri; resimler, kullanıcılar ve beğenilerden oluşan değer listeleri içerir.
+
+JSON hakkında ustalaşmak IoT uygulamaları geliştirmede önemlidir. IoT uygulamalarındaki cihazlardan ve 
+sensörlerden gelen veriler normalde JSON formatında gönderilir.
+
+Ayrıca yazılım testinde kalite güvencesi (Quality Assurance), bir kuruluş tarafından müşterilere sağlanan 
+yazılım ürünlerinin veya hizmetlerin kalitesini sağlamak için bir prosedür olarak tanımlanır. QA Testi 
+olarak da bilinen kalite güvencesi, yazılım geliştirme sürecini iyileştirmeye ve yazılım ürünleri için 
+tanımlanan kalite standartlarına göre süreci verimli ve etkili hale getirmeye odaklanır.
+
+Bu amaçla JSON, sistemler arasında bağlantı olarak kullanılabilir ve bu bağlantıyı test edebilir. Örneğin, 
+iş ortamında tek bir sistemin (buna A diyelim) muhasebe departmanındaki tüm çalışan verilerine sahip 
+olduğunu varsayalım. Verilerin her gün sistem B’ye taşınması isteniyor olsun. Bunun için A’dan gelen tüm 
+verilerin B’deki bir tabloya gitmesi ve ardından B’nin verileri doğru çalışana göre eşleştirerek belirli 
+bir şekilde düzenleyip sıralaması gerekir. Veriler sisteme girdikten sonra B, verilerin veritabanına doğru 
+bir şekilde gittiğinden emin olunması için çıktı JSON’u gönderir. Böylece başarılı veri hareketi doğrulanmış olur.
+
+JSON ve XML Farkı
+Bir web sunucusundan veri almak için hem JSON hem de XML kullanılabilir. Basit tasarımı, esnekliği, kullanım ve 
+anlaşılma kolaylığı nedeniyle, web ve mobil uygulamalar için yaygın olarak kullanılan JSON yarı yapılandırılmış 
+veriler için XML’ye alternatiftir çünkü daha sıkıştırılmış nesne temsilleri sağlayabilir.
+
+XML’ye kıyasla okunması kolaydır. XML gerekenden çok daha fazla kelime kullanır, bu da okumayı ve yazmayı 
+zaman alıcı hale getirir.
+
+XML, bir XML ayrıştırıcı tarafından çözümlenmelidir ancak JSON, standart bir JavaScript işlevi ile ayrıştırılabilir. 
+XML’in ayrıştırılması JSON’dan çok daha zordur. Büyük XML dosyalarının ayrıştırılması yavaştır ve çok fazla bellek gerektirir.
+
+Aşağıda da görebileceğiniz gibi, XML yapısı sezgisel değildir ve kodda temsil edilmesini zorlaştırır. Öte yandan, 
+JSON yapısı çok daha kompakt ve sezgiseldir, bu da herhangi bir programlama dilinde nesnelerin okunmasını kolaylaştırır.
+									
+databases.xml
+
+<databases>
+    <database>
+         <name> MySQL </name>
+         <type> RDBMS </type>
+    </database>
+    <database>
+         <name> MongoDB </name>
+         <type> NoSQL </type>
+    </database>
+    <database>
+         <name> Neo4j </name>
+         <type> Graph DB </type>
+    </database>
+</databases>
+
+databases.json
+
+{
+  "databases": [
+    {
+      "name": "MySQL",
+      "type": "RDBMS"
+    },
+    {
+      "name": "MongoDB",
+      "type": "NoSQL"
+    },
+    {
+      "name": "Neo4j",
+      "type": "Graph DB"
+    }
+  ]
+}
+
+En popüler veri değişim yöntemlerinden biri olan JSON’un XML’den ayrılan diğer özellikleri şunlardır:
+
+* JSON’da dize, tamsayı, boolean gibi nesne türleri vardır, ancak XML nesneleri tür olarak tanımlamaz. Tüm XML 
+nesneleri yalnızca tek bir veri türü, yani dize olarak kategorize edilir.
+* JSON, XML’den daha hafif ve daha hızlıdır.
+* JSON şemadan yoksundur, bu da tür ve sözdizimi denetimini daha az verimli ve hatalı biçimlendirilmiş verilere daha yatkın hale getirir.
+* JSON verilerine JavaScript kullanılarak bir JSON nesnesi olarak kolaylıkla erişilebilir. XML verilerinin API’ler 
+kullanılarak ayrıştırılması ve değişkenlere tahsis edilmesi gerekir. Bir JSON’dan değer elde etmek, JavaScript 
+programlamanızdan bir nesneyi okumak kadar kolaydır. Bu metin tabanlı hafif yapı, JSON’u XML’den daha erişilebilir ve kullanışlı hale getirir.
+
+JSON Dosyası Nasıl Açılır? 
+JSON dosyası Windows’un yerleşik Not Defteri gibi normal metin düzenleyicileri kullanarak açılabilir. Yapmanız gereken 
+ilk şey, sonunda .json uzantısı olan bir dosya oluşturmaktır. Dosyada bir nesne oluşturmak için açma ve kapama 
+küme parantezlerini {} kullanmalıyız ve bunun içine nesnemizi oluşturan tüm anahtar-değer çiftlerini yerleştirmeliyiz.
+
+JSON içindeki her bir özellik bir anahtar-değer çiftidir. Anahtar, çift tırnak işareti ve ardından iki nokta üst üste işareti: ve 
+ardından bu anahtarın değeri ile çevrelenmelidir. Birden fazla anahtar değer çiftimiz varsa, normal bir programlama dilinde bir 
+dizi oluşturmamıza benzer şekilde, anahtar değer çiftlerimizden her birini ayıran virgüllere ihtiyacımız vardır.
+
+Aşağıdaki örnekte, dosyamızın adı user.json. Dosyanın içinde farklı veri türlerimiz bulunuyor.
+
+# user.json 
+{ 
+   "name": "jane", 
+   "age": 34, 
+   "isProgrammer" true, 
+   "hobbies": ["swimming", "reading", "classic müsic"], 
+   "friends": [{ 
+      "name": "joey", 
+      "age": 39, 
+      "isProgrammer": false, 
+      "friends": [...] 
+}]
+}
+
+Dilerseniz JSON’la ilgili popüler ve ücretsiz çevrimiçi kaynaklara göz atabilirsiniz:
+
+* JSONLint – JSON dizesinin geçerli olup olmadığını doğrulamak için kullanabileceğiniz bir JSON doğrulayıcı.
+* JSON.dev – JSON’u görüntülemek, ayrıştırmak, doğrulamak, küçültmek ve biçimlendirmek için kullanabileceğiniz bir araç.
+* JSON Schema – JSON belgelerine kendi özel formatınıza göre açıklama eklemenizi ve doğrula yapmanızı sağlar.
+
+Özet
+QA testinden IoT uygulamalarına kadar çeşitli kullanım alanları bulan JSON, iki sistem arasındaki ağ bağlantısı üzerinden 
+serileştirilmiş verilerin iletimine olanak tanır.
+
+İnternette veri alışverişi için varsayılan format haline gelen JSON ile nasıl çalışılacağını öğrenmek, modern web geliştirmede önemli bir beceridir.
