@@ -23,4 +23,4 @@ text/html		htm
 application/msword	doc
 application/excel	xls
 application/json	json
-application/xml	xml
+application/xml 	xml
