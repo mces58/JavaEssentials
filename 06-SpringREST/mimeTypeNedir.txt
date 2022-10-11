@@ -1,0 +1,26 @@
+Mime Type Nedir?
+MIME Type (tür), farklı uzantılara sahip dosyaları belirleyebilmek için, her dosya uzantısına ait tanımlanmış kimlik 
+bilgileridir. Özellikle web tarayıcılarında kullanılan ayırt etme işlemi, arka planda çalışan kodların dosyalara ait 
+MIME Type eşleştirmesi yapılarak gerçekleştirilmektedir.
+
+MIME, Çok Amaçlı İnternet Posta Uzantıları anlamına gelir. MIME türleri, Internet'teki dosya türlerini sınıflandırmanın 
+standart bir yolunu oluşturur. Web sunucuları ve tarayıcıları gibi İnternet programları, MIME türlerinin bir listesine 
+sahiptir, böylece hangi tür işletim sistemlerinde çalışıyorlarsa çalışsınlar, aynı türdeki dosyaları aynı şekilde 
+aktarabilirler.
+
+Bir MIME türü iki bölümden oluşur: a türü ve bir alt türü . Bir eğik çizgi (/) ile ayrılırlar. Örneğin, 
+Microsoft Word dosyaları için MIME türü bir application'dır ve alt tür msword'dür. Birlikte, MIME türünün tamamı 
+application/msword'dür.
+
+MIME türlerinin tam bir listesi olmasına rağmen, dosyalarla ilişkili uzantıları veya dosya türünün açıklamasını 
+listelemez. Bu, belirli bir dosya türü için MIME türünü bulmak isterseniz, zor olabileceği anlamına gelir. 
+Bazen listeye göz atmanız ve ilgilendiğiniz dosyanın MIME türü hakkında bir tahminde bulunmanız gerekir.
+
+Örnek:
+MIME type 	Dosya uzantısı
+text/css			css
+text/html			htm
+application/msword	doc
+application/excel	xls
+application/json	json
+application/xml	xml

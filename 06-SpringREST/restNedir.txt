@@ -1,0 +1,163 @@
+REST nedir?
+REST REpresentational State Transfer (Temsili Durum Transferi) kısaltmasıdır.
+
+REST, web servis oluşturmak için kullanılan web servis yöntemlerinden birisidir.
+
+REST programlama dilinden bağımsız olarak web servis oluşturmak için kullanılan bir yapıdır.
+
+REST, HTTP protokolüne ait HTTP yöntemlerini ve HTTP durum kodlarını kullanarak gelen isteklere XML, JSON, CSV vb. olarak cevap verir.
+
+REST mimarisinin en önemli özelliği SOAP için kullanımı zorunlu olan WSDL gibi bir tanımlamaya ihtiyaç duymaması ve XML haricinde istenilen biçimde veri alışverişine imkan vermesidir.
+
+REST için herhangi bir kısıtlama yoktur.
+
+Ancak sıklıkla kullanılan ve kalıplaşmış (best practices) kullanımlar vardır.
+
+RESTful nedir?
+REST yerine RESTful teriminin kullanılması REST yapısından farklı olduğu izlenimi bırakıyor.
+
+RESTful veya RESTful API, REST mimarisiyle hazırlanmış web servisleridir.
+
+HTTP yöntemleri
+HTTP protokolü IETF içinde RFC 2616, RFC 2518, RFC 3253 vb. kurallarla belirlenmiş çeşitli HTTP yöntemlerine sahiptir.
+
+HTTP yöntemleri sunucu ile kullanıcı arasındaki iletişim yöntemini belirtir.
+
+Örneğin; Web tarayıcıdan bir web sayfasına girildiğine GET yöntemi, form ile veri göndermek için POST yöntemi kullanılır.
+
+Aşağıdaki HTTP yöntemleri, yaygın olarak REST tabanlı mimaride kullanılır.
+
+GET – Veri(leri) almak için kullanılır.
+PUT – Veri(ler) üzerinde değişiklik yapmak için kullanılır.
+DELETE – Veri(leri) silmek için kullanılır.
+POST – Veri göndermek/eklemek için kullanılır.
+
+HTTP durum kodları
+HTTP protokolü HTTP yöntemlerinde olduğu gibi çeşitli HTTP durum kodlarına sahiptir.
+
+HTTP durum kodları işlem sonucu ile ilgili bilgi almak için kullanılır.
+
+Örneğin; Web tarayıcıdan herhangi bir siteye ait web sayfasına girildiğine HTTP durum kodu 200 olacaktır. Web sayfası veya dosya sitede yoksa HTTP durum kodu 404 olacaktır.
+
+Aşağıdaki HTTP durum kodları, yaygın olarak REST tabanlı mimaride kullanılır.
+
+200 OK – İşlem başarıyla gerçekleşirse kullanılır.
+201 CREATED – İşlemi başarıyla gerçekleşirse kullanılır. Eklenen veri döndürülür.
+204 NO CONTENT – İşlemi başarıyla gerçekleşirse kullanılır. Eklenen, silinen veri döndürülmez.
+400 BAD REQUEST – Hatalı istek veya yetkilendirme hatası için kullanılır.
+401 UNAUTHORIZED – Yetkilendirme hatası için kullanılır.
+403 FORBIDDEN – Yetkilendirme ve erişim hatası için kullanılır.
+404 NOT FOUND – İstenilen işlem yoksa kullanılır.
+405 METHOD NOT ALLOWED – İzin verilmeyen HTTP yöntemi kullanıldığında bilgi vermek için kullanılır.
+409 CONFLICT – Aynı veri üzerinde birden fazla kişinin işlem yaptığını bildirmek için kullanılır.
+500 INTERNAL SERVER ERROR – Sunucuda herhangi bir hata olduğunda kullanılır.
+REST ile web servis geliştirirken sıklıkla kullanılan HTTP yöntemleri ve HTTP durum kodlarını kullanmak faydalı olacaktır.
+
+REST API ile hazırlanmış web servislerinde çıktı biçimi olarak genellikle JSON kullanılır.
+*******************************************************************************************************************************************************************************************
+
+REST Nedir?
+REST Ve RESTful Nedir?Öncelikle REST kavramı üzerinde durulması gerekirse, aslında bir kısaltma olmak ile birlikte “Representational State Transfer” 
+anlamına gelmektedir ve Türkçesi “Temsili Durum Transferi” karşılığını oluşturmaktadır. Bir protokol olmakla birlikte dağıtık bir sistem yapısı ile 
+web protokoller ve teknolojileri üzerinde kullanım gerçekleştirir.
+
+Client-server arasında yani kullanıcı ile sunucu arasında daha hızlı ve daha pratik bir şekilde iletişim gerçekleştirilmesi için kullanılan bir servis yapısıdır. Kullanımı 
+ilk defa 2000 yılında Roy Thomas Fielding tarafından gerçekleştirilen ve doktora tezi bağlamında tanıtımı yapılarak geliştirilen bu sistem, bugüne kadar kullanıma devam 
+edilmiştir ve halen önemli bir yere sahiptir.
+
+Bilindiği üzere daha önce bu protokol yerine SOAP veya WSDL tabanlı web servisleri kullanılıyordu. Fakat bu servislere bir alternatif olarak geliştirilen REST, 
+HTTP üzerinde çalışma sergilemektedir. En temel özelliklerinden biri olan basic ve minimum content sayesinde veri alışverişi gerçekleştirme özelliği sayesinde de 
+diğer web servislerine göre çok daha verimli ve hızlı bir kullanım sağlar.
+
+En temel görevi ile birlikte REST, kullanıcı-sunucu yani client-server arasında uygulama haberleşmelerini gerçekleştirmek açısından JSON ya da XML gibi çeşitlerde veri 
+taşıma işlemleri gerçekleştirir.
+
+RESTful Nedir?
+REST bir mimari yapı oluşturmak ile birlikte bu mimari yapı kendine ait bir prensibe sahiptir ve belirlenen özellikleri ile kullanım gerçekleştirildiğinde, bu kullanım 
+sonucunda da RESTful servis ortaya çıkar. Yani net bir tanım açısından RESTful için REST mimari kullanımı gerçekleştiren web servisleridir denilebilir.
+
+Genellikle HTTP protokolü üzerinden çalışma gösteren RESTful servisleri, bilgisayar veya cihazlarda kullanılan internet tarayıcıları üzerinde yani Safari, 
+Google Chrome, Mozilla, Opera gibi tarayıcılarda kullanılan sayfaların transferini sağlayabilmek açısından DELETE, PUT, POST gibi HTTP metotları sayesinde haberleşme sağlarlar.
+
+REST Mimarisi Ve Tarihçesi
+2000 yılında geliştirilmiş olan bu servis aslında yine Roy Thomas Fielding tarafından 1996-1999 yılları arasında yapılan bir çalışmaya başlanarak geliştirilmiştir. 
+Çünkü Fielding bu tarzı HTTP 1.0 üzerindeki tasarımı göz önünde bulundurarak, ortaya çıkarılan HTTP 1.1 tasarımı ile benzer bir şekilde 1996 yılından itibaren 
+geliştirmeye başlamıştır. Bu bağlamda da ortaya çıkan mimarinin belirgin bir şekilde avantajlı veya dezavantajlı kabul edilen özellikleri bulunmaktadır.
+
+REST mimarisinin özelliklerine bakıldığında, bazı etkileyici özellikler arasında örneğin performans ilk sırada bulunmaktadır. Çünkü bu mimari özellikle kullanıcılar 
+tarafından da tespit edildiği üzere performans açısından baskın bir avantaja sahiptir. Mimarinin diğer özelliklerine bakıldığında ise
+
+* Çok sade ve rahat kullanılabilir bir arayüzü bulunmaktadır.
+
+* REST, servis ajanlarınca yani hizmet vekilleri tarafından bileşenler arasındaki haberleşme görünürlüğü sağlamaktadır.
+
+* Farklı ihtiyaçların doğru bir şekilde yerine getirilmesi amacıyla bileşenlerde değişiklikler gerçekleştirilebilir.
+
+* Bir veri ile beraber program kodu hareket ettirildiğinde, istenilen bileşen kolaylıkla taşınabilir.
+
+* Birçok farklı sayıda bileşende bileşenler arası etkileşim sayesinde de ölçeklenebilirlik elde edilebilir.
+
+* Hataya karşı direnç güvenliği her zaman sistem seviyesindeki tüm veri, bağlantı veya bileşenlerde elde edilmektedir.
+
+REST Mimarisinde Sınırlamalar
+Aslında hem sınırlamalar hem de bazı kısıtlamalar olarak görülebilecek bu noktalar, REST mimarisi içerisinde hangi noktalar arasında çalışma prensipleri bulunduğunu 
+ifade etmektedir. Bu nedenle REST ve RESTful ile çalışma gerçekleştirmek isteyen herkesin bu kısıtlamalar konusunda da bilgi sahibi olması gereklidir.
+
+* Stateless (Bağımsız)
+REST Ve RESTful Nedir?İlk olarak stateless göz önünde bulundurulursa, örneğin server üzerinde client ile alakalı bir session veya context muhafaza edilemez. 
+Çünkü kullanıcı tarafından yapılan her talepte sunucu bir yanıt oluşturmak için istenilen bilgiyi taşır ve bu bilgi her zaman kullanıcı tarafında muhafaza 
+edilmekle birlikte sadece ihtiyaç duyulduğu zaman talep ile birlikte sunucuya bildirim gerçekleştirilir.
+
+Aslında bu durum ölçeklenebilirlik açısından önemli bir nokta olmak ile birlikte sunucu üzerindeki istekler arasında herhangi bir verinin saklanmasını 
+ortadan kaldırır ve çok daha pratik bir kaynak yönetimi sağlar. Ayrıca görünürlük açısından da isteğin amacını anlayabilmek açısından talebin bulundurduğu 
+bilgiler server için yeterlidir.
+
+Ancak önemli bir noktaya sahip olan bu sınırlandırma bazı dezavantajlar da ortaya çıkarmaktadır. Çünkü client gerçekleştirdiği her talepte bazı bilgiler 
+eklemek zorundadır ve bu nedenle ağ trafiği yoğunlaşmaya başlar. Bu durum sunucunun uygulama tutarlılığını kontrol etmesinde sıkıntıya yol açarken, 
+farklı kullanıcılardan gelebilecek farklı talepler karşısında da sunucu çok daha büyük bir validasyon yükü ile karşılaşır.
+
+* Basit Arayüz
+Basit ve pratik bir arayüz imkanı bulunsa da REST açısından bu durum önemli bir prensip oluşturur. Bu sayede iletişim çok daha basit bir hale gelirken, 
+ortak arayüz sayesinde de her parça bağımsız bir şekilde farklı evrimler geçirebiliyor. Bu durumun altında ise daha sonradan daha açık bir şekilde 
+bahsedilecek HTTP metotları ile ilgili bir ayrıntı var.
+
+Code On Demand (İsteğe Bağlı Kod)
+Code on demand sınırlaması ile birlikte sunucu bazı durumlarda kullanıcı tarafında daha fonksiyonel bir durum oluşturmak açısından executable scriptler 
+göndermeyi seçebilir. Bu faaliyet sonucunda bazen görünürlük oranı düşük olduğu için aslında opsiyonel bir kısıtlama oluşturmaktadır. Farklı bir açıdan 
+bakıldığında bir server, code on demand sınırlaması dışında diğer sınırlamalara sahi değil ise tam anlamıyla RESTful service olarak anılamaz. 
+
+* Client-Server Mimarisi (Kullanıcı-Sunucu Mimarisi)
+Client-server mimarisi aslında bu mimarinin en önemli kısıtlaması olmakla birlikte kullanıcının sunucu tarafında bulunan veri kaynağı konusunda bir bilgiye 
+sahip olmaması ve sunucunun da doğru talepler karşısında doğru yanıtları oluşturması mantığını ortaya çıkarmaktadır. Yani bu sayede client ve server 
+arasında birbirinden bağımsız bir ilişki yer alır. Buradaki temel amaç, bağımsız bir platform çalışması elde edebilmek ve ölçeklenebilirlik oranını 
+arttırmaktır. Üstelik bu iki birim arasındaki arayüz ortak bir şekilde kullanılmaya devam edildiğinde, birbirlerinden bağımsız olarak gelişmeye devam edebilirler.
+
+* Cach Edilebilme
+HTTP üzerinden gelen response yani etki, client tarafından cache edilebilir. Bu nedenle server gönderdiği tepkiler ile birlikte her zaman cachable olup 
+olmama durumunu ifade etmelidir. Çünkü bu durum performans açısından çok büyük bir önem arz eder.
+
+* Layered System (Tabakalı Sistem)
+Sunucu mimarisinin tabakalı bir yapıya sahip olması, aslında client tarafından bağlantı gerçekleştirilirken son sunucuya mı yoksa aradaki bir 
+sunucuya mı bağlantı yapıldığının bilinmemesinden kaynaklanmaktadır. Sahip olduğu bu yapı sayesinde de aracı sunucular ile birlikte balance değişiklikleri 
+sağladığı için daha fazla ölçeklenebilirlik imkanı sunarken, kullanıcılar belirli güvenlik adımlarında zorlama sağlayabilir. Ayrıca bu durumda 
+kapsülleme gerçekleştirilmesi ihtiyaç duyulan noktalarda da kullanım elde edilebilir. Fakat bir dezavantaj olarak elde edilen bu pipe-line 
+çok fazla kullanıldığında, client-server bağlantısında gecikmeler yaşanabilir. 
+
+* REST Üzerinde Kullanılan HTTP Metotları
+REST mimarisi ile birlikte RESTful servislerinin kullanması gereken HTTP metotları ayrı ayrı gözden geçirilerek, uygulama geliştirme aşamalarında 
+tercihlere bağlı olarak kullanılabilir. Bu nedenle metotların teker teker gözden geçirilmesi ve özelliklerine bakılması gerekebilir. Bahsedilecek 
+metotlar arasında ise GET, POST, DELETE ve PUT gibi metotlar yer alacaktır.
+
+- GET metodu; bu metot genellikle görüntüleme ve veri listeme işlemleri gerçekleştirmek istendiğinde kullanılan bir metot olmak ile birlikte mutlaka 
+gerçekleştirilen request işlemleri güvenli bir yapıya sahip olmalıdır. Bu metot kullanılarak veri gönderme işlemi yapıldığında, adres çubuğunda 
+gönderme sağlanırken, adres çubuğunda görünmezse işlemin güvenilir olmamasına neden olur. Bu nedenle güvenilir bir gönderim gerçekleştirmek için 
+verilerin MD5 şifreleme kullanılarak gönderilmesi daha doğru olacaktır.
+
+- POST metodu; Bu metot ise yer alan verilerin güncellemesi ve yeni verilerin eklenmesi amacıyla kullanılmakla birlikte GET metoduna göre adres 
+çubuğunda gösterim yerine daha güvenli bir kullanım sağlar.
+
+- DELETE metodu; Bu metotta ise veri silme işlemleri gerçekleştirmek için kullanım gerçekleştirilir.
+
+- PUT metodu; temel olarak veri güncelleme işlemleri için tercih edilmekle birlikte POST metodu da veri güncelleme için kullanılsa da PUT, 
+farklı olarak request amacında istenildiği kadar tekrarlansa dahi aynı sonucu sağlar.
+******************************************************************************************************************************************************************************************

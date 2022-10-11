@@ -1,0 +1,116 @@
+
+Dünya çapında 1990 yılından itibaren ağ üzerinde kullanılmakta olan iletişim protokolüdür. İnternet üzerinde görmüş olduğunuz web sayfalarının 
+görüntülenmesini sağlayan bir protokoldür. Http açılımı, İngilizce “Hyper Text Transfer Protokol”, Türkçesi “Hiper Metin Transfer Protokolü” 
+olarak bilinir. Genellikle http şeklinde kısaltması ile kullanılan bu terim, internet üzerinde yer alan bilgilerin sunuculardan kullanıcılara 
+nasıl aktarımının sağlanacağını gösteren bir yoldur. Tabii ki bu süreç içerisinde bir takım yöntem ve kurallar yer alır. Şimdi HTTP konusunu 
+detaylandırabiliriz.
+
+Http Nedir?
+İnternet üzerinde sunucular ve istemciler arasındaki iletişim ve bilgilerin nasıl aktarılacağını belirleyen kural ve yöntemleri düzenlemeye 
+yarayan sistemlerdir. Yani web üzerinde sayfaların düzenlenmesini sağlayan protokoldür. İstemci sunucuya bir web browser aracılığı ile 
+istekte bulunur, sunucu ise bir web sunucu programı ile istemciye cevap verir.
+
+İnternet üzerinde bilgi aramak istediğiniz zaman farklı arama motorları kullansanız dahi, tarayıcı http’yi otomatik olarak getirir. 
+Web sayfası giriş taleplerine sunucu bu istekleri http çerçevesinde bir komut olarak algılamakta ve bu komut doğrultusunda indirme 
+yapmaktadır. Http protokolü nedir? şeklinde sorguladığınızda ise verilecek en net cevap, aslında internet üzerinde erişmek 
+istediğiniz her noktanın anahtarı diyebiliriz.
+
+İnternet ortamında bakılacak olursa bilginin kontrolünü sağlayacak birçok protokol bulunmaktadır. Bu protokollerin içerisinde 
+önemli bir yere sahip olan ifade ise http uzantısıdır. Bu uzantı olmadan internet ortamında bulunan herhangi bir veri alınamamaktadır.
+
+HTTP Ne İşe Yarar?
+Http anlamı en basit haliyle, sizlerin internet siteleri ile bağlantı kurmanızı sağlayan anahtar olarak tanımlanabilir. 
+İnternet kullanırken web sitesine bağlanmak için adres çubuğuna site ismi girildiğinde başına http yazmasanız bile sistem 
+otomatik olarak site isminin önüne getirecektir. Çünkü protokoller gereği erişilmek istenilen alana http tarafından yöneltilen 
+komut sayesinde bağlantı gerçekleştirilir.
+
+HTTP, ağ ortamında veri sunmak için kullanılmakta olan TCP/IP tabanlı iletişim protokolüdür ve bağlantı noktası olarak TCP 80 portu 
+sıklıkla kullanılır.
+
+HTTP Nasıl Çalışır?
+Gün içinde onlarca kez bilgisayarlarınız üzerinden birçok web sitesine giriş sağlıyorsunuz. Aslında bu işlemi gerçekleştirirken, 
+bilgisayarınız ile hiç farkında bile olmadan farklı sunuculara taleplerde bulunuyorsunuz. Bilgisayar, yani istemci, sunuculara 
+bir web tarayıcısı aracılığı ile istek gönderir. Google Chrome, Mozilla, Yandex, Opera, Internet Explorer gibi web tarayıcıları 
+üzerinden de bu işlemleri gerçekleştirebilirsiniz.
+
+İsteği alan sunucu, kurulu sunucu programları aracılığı ile yanıt gönderir. Yanıt içeriğinde istek hakkında durum bilgisi yer 
+alır ve istenen içerik de barındırılabilir. Bu sırada devreye http protokolü girer ve güvenli bir şekilde talebin sunulmasını 
+sağlar. Yani http, sunucu üzerine bir giriş talebinde bulunur ve talep üzerinde onay alındığında erişilmek istenilen sitenin 
+verileri karşımıza çıkar, böylelikle site girişi gerçekleştirilmiş olur.
+
+HTTP Durum Kodları
+HTTP Status Code yani HTTP durum kodları, protokol kapsamında sunucu ile istemci arasında belirli kurallara dayalı alışveriş 
+gerçekleşir. Durum kodları ise bu alışveriş sonucunda elde edilen cevabın olumlu veya olumsuz olduğunu anlamaya yardımcı olur. 
+Kullanıcılar tarafından çoğunlukla bu kodlar görülmez. Sebebi ise tarayıcı tarafından dönüştürülmesidir.
+
+5 ayrı grupta toplanan durum kodları şu şekildedir:
+
+- Bilgi – 1**
+- Başarı – 2**
+- Yönlendirme – 3**
+- Tarayıcı Hatası – 4**
+- Sunucu Hatası – 5**
+Toplamına bakıldığında ise HTTP Durum Kodu sayısı 80’i bulmaktadır.
+
+HTTP ve HTTPS Arasındaki Farklar Nelerdir?
+Bahsi geçen iki kavram birbirleri ile karıştırılmamalı, http ve https farkları bilinmelidir. Açılımlara bakıldığında HTTPS’in açılımı, 
+"Hypertext Transfer Protocol Secure", Türkçesi, “Güvenli hiper metin transferi”’dir. Http ile güvenli veri aktarımı belli bir oranda 
+gerçekleştirilirken https ile bu aktarım güvenlik artırılmış biçimde sağlanmaktadır. HTTP veri iletimi sürecinde şifreleme yapmazken, 
+HTTPS’de iletişim aşamasından önce veriler şifrelenir. SSL sertifikası bu bağlantının olmazsa olmazıdır.
+
+
+HTTPS ya da uzun açılımı ile “Secure Hyper Text Transfer Protocol”, Türkçe olarak “Güvenli Metin Aktarma Protokolü” anlamına gelir. 
+Diğer bir deyişle kullandığınız protokole SSL sertifikası eklenmiş, yani web sitesinin güvenli olduğunu beyan etme şeklidir. 
+HTTPS nedir ve HTTPS ne demek gibi sorulara, temel olarak internet sitelerinin bağlantı şekillerinin şifrelenmesi ve güvenlik 
+altına alınması şeklinde cevap verebiliriz.
+
+HTTP ile HTTPS arasındaki en büyük fark, HTTPS sisteminin görüntülemek istediğiniz siteye doğrudan giriş yapmadan önce siteyi 
+güvenlik protokolü ile bir dizi güvenlik önleminden geçirmesidir. Bu durum hem tarayıcılar hem de kullanıcılar gözünde web 
+sitenizin daha güvenilir bir kaynak olarak görülmesini sağlar. Yani kullanıcılar ve tarayıcılar, web sitenizi güvenli olarak 
+tanımlayarak bu doğrultuda giriş yapmış olurlar. Bu sayede web sitenizin giriş oranlarında ciddi kazanımlar elde edebilirsiniz.
+
+HTTPS'nin çalışma prensibi nasıldır?
+Açmak istediğiniz web sitesini arama çubuğuna yazdığınızda, öncelikle bu web sitesine bir istek gider. Bu isteğe karşılık 
+aldığınız sonuç ile birlikte web sitesine giriş yapmış olursunuz. Bu süreci sağlayan, HTTP ve HTTPS protokolleridir. 
+HTTPS protokolünde HTTP'den farklı olarak sitenin güvenliğinin sertifikalandığı SSL sertifikaları bulunur. "Secure Socket Layer” 
+yani “Güvenli Giriş Katmanı” adı verilen bu katman, sitenizin güvenilir olduğunu gösteren bir çeşit güvenlik sertifikasıdır. 
+Netscape tarafından geliştirilen bu sertifika, web sitenizin tarayıcılar ve sunucular tarafından tanınmasına da olanak sağlar.
+
+Peki HTTPS' nin web sitenize faydaları nelerdir? Gelin birkaç madde üzerinde inceleyelim.
+
+Öncelikle HTTPS kullanımı ile birlikte web sitenizin güvenli bir web sitesi olduğunu sertifikalamış ve beyan etmiş olursunuz. 
+Bu sayede tüm tarayıcı ve sunucular web sitenizi güvenli görerek kullanıcılarınıza herhangi bir uyarı vermez.
+
+HTTPS kullanmıyorsanız, kullanıcılarınıza çoğunlukla "Bu site güvenli değil" uyarısı gösterilir. Bu da ziyaretçilerinizin 
+web sitenize olan güvenini azaltır ve sitenizin tıklanma oranlarını düşürür. Bazı sitelerde "Bu site güvenli değil giriş 
+yapmayınız." uyarısını görmüşsünüzdür. Bu siteler SSL sertifikasına sahip olmayan, diğer bir deyişle HTTPS kullanmayan 
+web siteleridir ve kullanıcı gözünde hiç de hoş karşılanmazlar.
+
+Eğer bir e-ticaret sitesine sahipseniz web sitenizde kullanıcı bilgileri barındıracağınızdan, HTTPS kullanmadığınız 
+taktirde ciddi güvenlik problemleri ile karşılaşabilirsiniz. Ayrıca müşterilerinizin güvenli olmadığını düşündükleri 
+bir web sitesinden alışveriş yapmayacakları düşünüldüğünde, e-ticaret sitelerinde HTTPS kullanımı çok önemlidir. İşe 
+ilk olarak müşterilerinize güven vererek başlamalısınız.
+
+Çoğu tarayıcı HTTPS protokolü kullanmayan web sitelerini arama sıralamalarında göstermez ya da geri sıralarda gösterir. 
+Güvenlik sebebi ile arama yapan kullanıcıları korumak için uygulanan bu yöntem, HTTPS kullanmayan web siteleri için ciddi 
+bir görünürlük sorunu oluşturur.
+
+İnternet sitesinin HTTPS protokolüne sahip olduğu nasıl anlaşılır?
+Bir web sitesini ziyaret etmeden önce SSL sertifikasına sahip olup olmadığını öğrenmek için URL yapısına göz atabilirsiniz. 
+Link yapısı "https://" şeklinde başlıyorsa, giriş yapmaya çalıştığınız web sitesi bir SSL sertifikasına sahiptir ve 
+güvenli olarak etiketlenmiştir. Öte yandan web sitesi "http://" şeklinde başlayan bir link yapısına sahipse, bu siteye 
+giriş yapmaya çalıştığınızda 'Güvenli değil' ibaresini görürsünüz. Bu ibare size sitenin bir SSL sertifikası tarafından 
+korunmadığını anlatır. Unutmayın, hiçbir kullanıcı giriş yaptığı sitede 'Güvenli değil' ibaresini görerek kullanıma devam 
+etmez. Ziyaretçileriniz bu uyarıyı gördüğünde web sitenizin güvenli olmadığını düşünecek ve hızlıca çıkış yapacaktır.
+
+Eğer web sitenizi yeni kuruyorsanız, alan adı ve hosting işlemlerini yaparken SSL sertifikanızı da alarak web sitenizi 
+HTTPS protokolünde kullanım sunan bir hale getirebilirsiniz. SSL sertifikanızı aldıktan sonra hızlıca kullandığınız 
+sisteme göre entegresini yapabilirsiniz. Dakikalar içerisinde HTTPS kullanımınız hazır olacaktır. Ancak daha önce HTTP 
+kullanıyor ve sonradan HTTPS kullanımına geçmek istediyseniz, HTTP kullanımında olan eski linklerinizi HTTPS olarak 
+yönlendirme yapmanız gerekecektir. Bu durumda ilk olarak “Google Search Console” sayfasına gidip gerekli adımları 
+tamamlamalı, ardından eski linklerinizi yeni HTTPS linklerinize yönlendirme yapmalısınız. Bu yönlendirmeleri yaparken 
+Google sıralamanızda herhangi bir kayıp ya da indekslenme sorunu yaşamamak için yardım alabilirsiniz.
+
+HTTPS, özellikle ödeme altyapısı kullanan web siteleri için çok önemlidir. Bu nedenle çeşitli güvenlik problemleri 
+ile karşı karşıya kalmamak için HTTPS kullanmayan sitelerden olmamak veya bu sitelerde bilgi paylaşımı yaparken 
+dikkatli olmak, kişisel güvenliğiniz açısından oldukça önemlidir.
