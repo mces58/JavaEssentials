@@ -18,8 +18,8 @@ Bazen listeye göz atmanız ve ilgilendiğiniz dosyanın MIME türü hakkında b
 
 Örnek:
 MIME type 	Dosya uzantısı
-text/css			css
-text/html			htm
+text/css		css
+text/html		htm
 application/msword	doc
 application/excel	xls
 application/json	json
