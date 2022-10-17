@@ -1,0 +1,27 @@
+{"properties": [
+  {
+    "name": "student.age",
+    "type": "java.lang.String",
+    "description": "A description for 'student.age'"
+  },
+  {
+    "name": "student.firstName",
+    "type": "java.lang.String",
+    "description": "A description for 'student.firstName'"
+  },
+  {
+    "name": "student.firstName",
+    "type": "java.lang.String",
+    "description": "A description for 'student.firstName'"
+  },
+  {
+    "name": "student.lastName",
+    "type": "java.lang.String",
+    "description": "A description for 'student.lastName'"
+  },
+  {
+    "name": "student.firstName",
+    "type": "java.lang.String",
+    "description": "A description for 'student.firstName'"
+  }
+]}
