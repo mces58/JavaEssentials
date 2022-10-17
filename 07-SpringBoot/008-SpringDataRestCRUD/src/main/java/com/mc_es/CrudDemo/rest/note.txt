@@ -1,0 +1,72 @@
+Spring data rest?
+
+spring data rest aslinda ayni spring data jpa gibi calisir. Spring data jpa nasil veri tabani islemleri yazmiyorduk spring data rest 
+ile de endpoint islemleri yazmayacagiz. spring data rest bizim icin crud ve islemler icin endpoint'leri hazir olarak getirecek.
+
+verilere ulasmak icin entity nesnesini cogul hale getirir. ornegin country nesnesini cogul hale getirerek countries yapar
+url olarakta localhost:7070/countries diyerek tum ulkelere ulasabiliriz.
+
+root path degistirmek istiyorsak properties dosyasina spring.data.rest.base-path= magic/api
+yazarak url kokunu degistirebiliriz localhost:7070/magic/api/countries
+--------------------------------------------------------------------------------------------------------------------------
+
+spring data rest kullanarak business katmanindan da kurtulmus olduk
+
+katmanlarin gelisim tarihine bakacak olursak
+
+hibernate teknolojisi kullanirken:
+entity katmani - dao katmani - business katmani - rest katmani
+
+jpa teknolojisi kullanirken:
+entity katmani - dao katmani - business katmani - rest katmani 
+
+spring data jpa teknolojisini kullanirken:
+entity katmani - business katmani - rest katmani (dao katmani yerini jpa repository birakti)
+
+spring data rest teknolojisini kullanirken:
+entity katmani - rest katmani (business ve rest katmani yerini spring data rest birakti)
+--------------------------------------------------------------------------------------------------------------------------
+
+spring data rest kullanabilmek icin dependency import etmek, entity katmani ve entity katmanini kullanan spring data jpa olmalidir.
+sonrasinda rest icin bir kodlama yapmaya gerek yoktur
+--------------------------------------------------------------------------------------------------------------------------
+
+spring data rest ile ek olarak verinin meta verilerini(link,self..) gosterir
+--------------------------------------------------------------------------------------------------------------------------
+
+enpoint'ler icin cogul isim uretir demistik lakin bazi durumlarda bu gecerli olmaz. ornegin elimizde person adli bir entity var ise
+bunun cogulu olan people kelimesini spring data rest uretemez. bu durumda manuel olarak bizim vermemiz gerekir
+kodda kullanimina bakalim:
+
+elimizde person entity olsun url'de tum musterileri cagirmak istiyoruz dolayisiyla localhost:8080/persons olmayacagi icin biz kendimiz vermeliyiz
+
+	@RepositoryRestResource(path = "people")
+	public interface PersonRepository extends JpaRepository<Person, Integer> {
+	
+	}
+
+yukarida kodda url kokunu degistirdik. localhost:8080/magic/api/people halini aldi ve bunu jpaRepository interface'sine uyguladik
+properties dosyasinda base-path=magic/api yaptigimiz icin ilk onlar gelir
+--------------------------------------------------------------------------------------------------------------------------
+
+birde spring data rest eger sorgu sonucunda 20'den fazla veri donecekse bunlari gostermeyecektir. kalanlari gostermesi icin
+properties dosyasina spring.data.rest.default-page-size deger vererek veri sayisini artirabiliriz.
+ornegin biz burada spring.data.rest.default-page-size= 100 degerini verdik lakin elimizde 239 tane ulke var.
+ilk page yani ilk sayfada 100 tane ulkeyi gosterir sonra 2. page gecer onda da 100 tane ulkeyi gosterir sonra 3. page gecer
+orada da 39 tane ulkeyi gosterir. 
+page'ler arasi dolasmak icin url sonuna ?page1&size=100 yazmaliyiz. Bunun anlami 2. page ve 100 veri gelecektir demek
+dizilerde ki mantik ile ayni page'lerde 0.indexten baslar.
+?page=2size=20 yaparsak verileri 20'ser 20'ser ayirir ve 3. page bize gosterir(neden 3. page? 0, 1, 2 dizi mantigi)
+
+Burada soyle bir hata ile karsilasilabilir: query result offset is not supported
+bu durum da;
+spring.jpa.properties.hibernate.dialect= org.hibernate.dialect.SQLServerDialect 
+ifadesini sununla degistirmek gerekir;
+spring.jpa.properties.hibernate.dialect= org.hibernate.dialect.SQLServer2008Dialect
+veya spring.jpa.properties.hibernate.dialect ozelligini hic vermeyeceksin yine calisir
+
+--------------------------------------------------------------------------------------------------------------------------
+
+ayni zamanda siralama da yapabiliriz. bunun icin url sonuna ?sort=population,desc yazarsak ulkeleri nufusa gore siralar
+?sort=firstName,lastName,asc yazarsak ile ada gore siralar sonra soyada gore siralar kucukten buyuge dogru.
+--------------------------------------------------------------------------------------------------------------------------

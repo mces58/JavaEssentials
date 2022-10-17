@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"> <!-- thymeleaf html sayfasina dahil etmeliyiz -->
+	<head>
+		<meta charset="UTF-8">
+		<title>Thymeleaf Demo</title>
+	</head>
+	<body>
+	<!-- 
+	${message} ile controller class'inda ki message ayni isimde olmalidir ki dinamik olarak onu oradan cekelim.
+	ayni sey date icinde gecerlidir.
+	 -->
+	 	<h1 th:text="'Merhaba ' + ${name}"></h1>
+		<p th:text="${message} + ${date}" />
+	</body>
+</html>
+
+<!-- 
+sablonlar templates altina konulur. css, image, js gibi statik dosyalar ise static klasorune konulur.
+Tabi bunlari kendi iclerinde alt klasorleme yapabiliriz
+-->
