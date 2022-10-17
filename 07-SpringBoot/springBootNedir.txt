@@ -1,0 +1,105 @@
+İlk olarak bilmemiz gereken Springboot ile daha performanslı ve etkili microservisler geliştirebilmekteyiz.
+
+Micro Service Nedir?
+Micro servisler ise her bir servis işleminin ayrı bir process üzerinde çalışmasıdır. Bu sayede çalışan 
+programın ana işlemi üzerindeki yük bölünerek ayrı ayrı işlemlerde çalışmasına ve bu sayede daha performanslı 
+servisler geliştirilebilmesine olanak tanıyan bir yazılım geliştirme mimarisidir.
+
+Springboot nedir?
+Springboot Java programlama dilinde geliştirilen ve Java dilinde güçlü MicroService yazılmasına olanak tanıyan 
+bir frameworktür. Springboot sayesinde backend uygulama geliştirirken veritabanı işlemlerimizi Java ile 
+Language Integrated olarak yazabiliriz ve Springboot tarafından bu işlemler gerçekleştirilir. Aynı zamanda 
+client tarafındaki uygulamalar içinde servis uçları sağlayarak veri girdi-çıktısı oluşturabiliriz.
+
+Springboot ile;
+* Daha az veritabanı kodu yazarak daha az vakit kaybı ile daha hızlı geliştirme yapabiliriz.
+* Springboot mimarisini anlamak daha kolaydır. Bu sayede daha verimli uygulamalar geliştirilebilmektedir.
+* Java programlama dili ile Language Integrated veritabanı komutları yazabilmekteyiz.
+* Servis uçları için REST kullanımı sunar ve güçlü bir REST yapılandırmasına sahiptir.
+* Birçok yapılandırma otomatik olarak yapılmış durumdadır. İstediğiniz takdirde değiştirebilirsiniz.
+* Anotasyonlar kullanarak uygulama ve uygulama içi mimari değişiklikler yapılabilmektedir.
+* Kendisine ait bir servlet container bulunur. Bu sayede servis uçlarına gelen istekleri alır işler ve ilgili komutlara yönlendirir.
+* Java Bean yönetimi kolaydır. Aynı zamanda istenilen veritabanı yönetimine uygun olarak çalışır..
+
+Springboot nasıl çalışır?
+Bir SpringBoot uygulamasının çalışması için 3 temel anotasyon bulunmaktadır :
+- @SpringBootApplication
+- @EnableAutoConfiguration
+- @ComponentScan
+
+@SpringBootApplication anotasyonu uygulamanın giriş metodunu belirtir. Yani halk arasındaki tabir 
+ile main fonksiyondur. Uygulama bu metod ile başlar.
+
+@EnableAutoConfiguration anotasyonu ile uygulama bağlılıkları (dependencies) içerisinde belirtilen yapılandırmaları 
+otomatik olarak çalıştırır. Örnek olarak veritabanı ayarlamasını yapar, REST yapılandırmasını hazırlar ve gerekli 
+olan herşey uygulama için hazır hale gelir.
+
+@ComponentScan anotasyonu ise proje içerisinde tanımlanan bütün komponentleri tarar. Bu sayede modeller, 
+repositoryler servisler, controllerlar vs. hepsi kullanıma hazır hale getirilir.
+
+SpringBoot uygulaması nasıl başlatılır?
+Springboot uygulaması başlatmak için dependency içerisinde tanımlanan starter apileri kullanılır. Her bir işlem 
+tipi springboot tarafından dependencies içerisinden starter tanımlanır. Bu apiler geliştiricilerin 
+işlerini kolaylaştırmak için tasarlanmıştır.
+
+Aşağıda bazı starter apilerin ne işe yaradıkları gösterilmiştir :
+* spring-boot-starter-data-jpa : Veritabanı işlemleri için kullanılır
+* spring-boot-starter-actuator : Springboot uygulamasının yönetimi için kullanılır.
+* spring-boot-starter-security : Springboot uygulamasının servis uçlarına erişimin güvenliğini yönetmek için kullanılır.
+* spring-boot-starter-web : Springboot kullanılarak REST servis uçları geliştirmek için kullanılır
+* spring-boot-starter-thymeleaf : Springboot ile web uygulaması geliştirmek için kullanılır
+* spring-boot-starter-test : Springboot için test kontrolleri yazmak için kullanılır.
+
+Aşağıda bir starter apinin dependencies içerisine nasıl eklendiği gösterilmiştir:
+<dependency>
+   <groupId>org.springframework.boot</groupId>
+   <artifactId>spring-boot-starter-security</artifactId>
+</dependency> 
+
+Sprinboot uygulama katmanlarınndan bahsedelim
+Genel olarak temel bir springboot uygulamasında aşağıdaki işlem katmanları bulunur. Düzenli geliştirme 
+yapabilmek adına işlemlerin ilgili katmandan yapılması önemlidir. Aksi hale büyük projelerde karmaşıklıklar 
+oluşma ihtimali yüksektir.
+
+* Model Katmanı : Model katmanında veritabanı tablolarımızın modelleri hazırlanır ve yapılandırmalar belirlenir.
+* Repository katmanı : Uygulamanın veritabanı ile kuracağı iletişim Repository katmanı üzerinden sağlanır.
+* Service Katmanı : Uygulamanın gerçekleştireceği özel işlemler ve kontroller servis katmanında belirlenir.
+* Controller Katmanı : Oluşturulan REST servis uçları controller katmanı tarafından belirlenir ve servis ile 
+iletişim controllerlar üzerinnden kurulur.
+
+Aşağıdaki örnekte springboot katmanlarının arasındaki ilişki diagramı gösterilmiştir.
+
+--------------------                       ------------                                  ----------                               ------------                          --------------
+|                  | ----Rest Endpoint---> |          |                                  |        |                               |          |                          |Model Based |
+|Client Application|                       |Controller| <--Request Specific Callbacks--> |Services| <--Some Specific Operations-->|Repository| <--Database Operations-->|Database    |
+|                  | <--Service Response-- |          |                                  |        |                               |          |                          |Architecture|
+--------------------                       ------------                                  ----------                               ------------                          --------------
+
+MODEL KATMANI
+Springboot uygulamalarında Model oluşturmak için, normal bir Java sınıfı oluşturulur ve içerisine kolonların 
+adları eklenir. Bu esnada kolonların veritipleri, uzunlukları gibi ayarlamalarda anotasyonlar kullanılarak 
+belirlenir. Bu sınıf bir Entity temsil edeceği için sınıfın kendisi @Entity anotasyonu ile bildirilir. 
+Aynı zamanda getter ve setterlar ile birlikte constructorlar belirlenmelidir. Bu sayede ek model 
+kontrolleri yapılabilir.
+
+REPOSİTORY KATMANI
+Repository katmanı JPARepository sınıfından kalıtım alan bir interface şeklinde yazılır. Repository katmanı, 
+içerisinde veritabanı işlemlerini direk olarak belirtmemize olanak tanır. Bu sayede SQL kodu yazmadan 
+sadece metod isimlerini yazarız ve derlenme aşamasında, ilgili sorgular otomatik olarak oluşturulur. 
+Eğer yazmak istediğimiz komutlar JPA sınıfının anlamlandıramayacağı kadar karmaşık komutlar ise ilgili 
+komuta gerekli SQL sorgusu @Query anotasyonu ile bildirilir ve metod çağrıldığında belirtilen sorgu çalıştırılır. 
+Repository katmanının bu fonksiyonelliği bize geliştirme esnasında ciddi derecede vakit kazandırmış olur.
+
+SERVİCE KATMANI
+Servis katmanı ara bir katmandır ve gerekli operasyonlar burada geliştirilir. Service katmanında Controller'dan 
+gelen veri işlenir ve gerekli kontroller yapılır, uygunsa veritabanına kaydedilir değise geri cevap oluşturulur 
+ve controller katmanına gönderilir. Yani Controller ve Repository katmanları arasında bir güvenlik katmanı 
+diyebiliriz. Diğer servisler ile iletişim kurularak onlarla veri alışverişi sağlanır. Bir Java sınıfının 
+service katmanı olduğunu belirtmek için sınıf üzerinde @Service anotasyonu kullanılır. Bu sayede Springboot 
+tarafından o sınıf service olarak tanımlanır ve o şekilde derlenir.
+
+CONTROLLER KATMANI
+Controller katmanı uygulamamızın dışarıya açılan kapısınıdr. Uygulamamız burada REST apileri belirler ve 
+dışarıdan, belirlenen apilere gelen verileri ilgili işlemlerden geçirerek istemciye cevap döndürür. 
+Tanımlanan REST servis uçları Springboot tarafından mapping yapılır. Servlet gelen istekleri, ilgili 
+metodlara bu mapping aracılığı ile yönlendirir. Bu sayede Springboot uygulamamız dışarıısı ile iletişim kurmuş olur.
