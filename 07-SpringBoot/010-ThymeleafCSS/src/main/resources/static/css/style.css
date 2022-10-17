@@ -1,0 +1,11 @@
+.color { /*class*/ 
+	color: red;
+}
+
+.fontStyle {
+	font-style: italic;
+}
+
+.fontSize {
+	font-size: 40px;
+}

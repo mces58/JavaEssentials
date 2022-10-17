@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thmeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<title>Country Directory</title>
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+    	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+	</head>
+	<body id="top">
+		<div class="table-responsive">
+			<h2>Country Directory</h2>
+			<a href="/home">Back to home page</a>
+			<hr>
+			<table class="table table-success table-striped table-bordered border-secondary table-hover">
+				<thead class="table-primary">
+					<tr>
+						<th>#</th>
+						<th>Country Code</th>
+						<th>Country Name</th>
+						<th>Continent</th>
+						<th>Region</th>
+						<th>Population</th>
+						<th>Surface Area</th>
+						<th>Government Form</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="tempCountry : ${countries}">
+						<td th:text="${tempCountry.countryId}"/>
+						<td th:text="${tempCountry.countryCode}"/>
+						<td th:text="${tempCountry.countryName}"/>
+						<td th:text="${tempCountry.continent}"/>
+						<td th:text="${tempCountry.region}"/>
+						<td th:text="${tempCountry.population}"/>
+						<td th:text="${tempCountry.surfaceArea}"/>
+						<td th:text="${tempCountry.governmentForm}"/>
+					</tr>
+				</tbody>
+			</table>
+			<a href="#top"><strong>Back to top</strong></a>
+		</div>
+	</body>
+</html>

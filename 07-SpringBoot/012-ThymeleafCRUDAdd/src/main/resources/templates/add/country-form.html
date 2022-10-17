@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thmeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<title>Save Country</title>
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+    	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="container">
+			<h2>Country Directory</h2>
+			<hr>
+			
+			<p class="h4 mb-4">Save Country</p>
+			
+			<form action="#" th:action = @{/countries/save} th:object = ${country} method="post">
+				<input type="text" th:field = "*{countryCode}" class="form-control mb-4 col-4" placeholder="Country Code">
+				<input type="text" th:field = "*{countryName}" class="form-control mb-4 col-4" placeholder="Country Name">
+				<select th:field="*{continent}" class="form-control mb-4 col-4 form-select">
+					<option value="South America">South America</option>
+					<option value="North America">North America</option>
+					<option value="Antarctica">Antarctica</option>
+					<option value="Oceania">Oceania</option>
+					<option value="Europe">Europe</option>
+					<option value="Africa">Africa</option>
+					<option value="Asia">Asia</option>
+				</select>
+<!-- 				<input type="text" th:field = "*{continent}" class="form-control mb-4 col-4" placeholder="Continent"> -->
+				<input type="text" th:field = "*{region}" class="form-control mb-4 col-4" placeholder="Region">
+				<input type="number" th:field = "*{population}" class="form-control mb-4 col-4" placeholder="Population" min="0">
+				<input type="number" th:field = "*{surfaceArea}" class="form-control mb-4 col-4" placeholder="Surface Area" min="0">
+				<input type="text" th:field = "*{governmentForm}" class="form-control mb-4 col-4" placeholder="Government Form">
+				<button type="submit" class="btn btn-info col-2">Save</button>
+			</form>
+			<hr>
+			<a th:href=@{/countries/findAll}>Back to Countries List</a>
+			<br>
+			<a th:href=@{/}>Back to Home Page</a>
+		</div>
+	</body>
+</html>

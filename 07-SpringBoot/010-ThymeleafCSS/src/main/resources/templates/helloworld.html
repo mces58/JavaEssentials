@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"> <!-- thymeleaf html sayfasina dahil etmeliyiz -->
+	<head>
+		<meta charset="UTF-8">
+		<title>Thymeleaf Demo</title>
+		<link rel="stylesheet" th:href="@{/css/style.css}"/> <!-- dinamik olarak css dosyasinin yerini buldu -->
+	</head>
+	<body>
+	 	<h1 th:text="'Merhaba ' + ${name}" class="color fontSize fontStyle"></h1> <!-- birden fazla class uygulayabiliriz -->
+		<p th:text="${message} + ${date}" class="color fontStyle"/>
+	</body>
+</html>
+
+<!-- 
+sablonlar templates altina konulur. css, image, js gibi statik dosyalar ise static klasorune konulur.
+Tabi bunlari kendi iclerinde alt klasorleme yapabiliriz
+-->
