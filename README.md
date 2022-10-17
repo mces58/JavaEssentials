@@ -22,4 +22,4 @@
 ***Bu bölümde http, api, server vb. işlemlerin Java'da nasıl gerçekleştiğini anlatmaya çalıştım.***
 
 ## 07-SpringBoot
-***Bu bölümde Spring boot nedir, nasıl çalışır, nerelerde kullanılır gibi sorulara cevap vermeye ve database bağlantılarını kurmayı, Thyemeleaf teknolojisi ile HTML sayfaları oluşturmayı anlatmaya çalıştım.***
+***Bu bölümde Spring boot nedir, nasıl çalışır, nerelerde kullanılır gibi sorulara cevap vermeye ve database bağlantılarını kurmayı, Thymeleaf teknolojisi ile HTML sayfaları oluşturmayı anlatmaya çalıştım.***
