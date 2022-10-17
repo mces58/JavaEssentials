@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thmeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<title>Home Page</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+    	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+		
+	</head>
+	<body>
+		<h2>Home Page</h2>
+		<a th:href="@{countries/findAll}" class="btn btn-outline-info">Get All Countries</a>
+		<a th:href="@{countries/formForAdd}" class="btn btn-outline-info">Add Country</a>
+	</body>
+</html>
