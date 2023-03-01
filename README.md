@@ -1,4 +1,5 @@
-<video src="https://user-images.githubusercontent.com/72516854/222273063-25c36520-a2fc-46fb-a15b-cafd5285a07b.mp4" autoplay loop muted></video>
+<img src="https://user-images.githubusercontent.com/72516854/222277735-b37d7910-5180-417b-b7c7-f8f77d534295.gif"></img>
+
 
 
 
