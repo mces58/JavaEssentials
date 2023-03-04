@@ -28,4 +28,1280 @@
 </div>
 <hr>
 
+<ol type="1">
+<h2>
+<li>
+&#x1F4A1; 
+<a href="https://github.com/mces58/JavaEssentials/tree/main/00-Temel">
+BASIC
+</a>
+</li>
+</h2>
 
+<p>
+<em>
+The fundamentals of Java have been covered in this section, explained through real-life examples. &#x1F4DA;
+</em>
+</p>
+
+<ol type="A">
+<li>
+<h5>
+<strong><em> Lesson 1 - Introduction </em></strong>
+</h5>
+</li>
+
+<ul type="circle">
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/00-Temel/000-HelloJava">
+  Hello World
+</a>
+</li>
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/00-Temel/001-DegiskenlerVeVeriTipleri">
+  Variables and Data Types
+</a>
+</li>
+
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/00-Temel/004-AritmetikOperatorler">
+  Arithmetic Operators
+</a>
+</li>
+
+<li>
+<h6>
+  <strong><em> Conditional Statements </em></strong>
+</h6>
+</li>
+<ul type="disc">
+<li>
+  <a
+    href="https://github.com/mces58/JavaEssentials/tree/main/00-Temel/006-KosulDurumlari">
+    If - Else
+  </a>
+</li>
+
+<li>
+  <a
+    href="https://github.com/mces58/JavaEssentials/tree/main/00-Temel/007-SwitchCase">
+    Switch Case
+  </a>
+</li>
+</ul>
+
+<li>
+<h6>
+  <strong><em> Loops </em></strong>
+</h6>
+</li>
+<ul type="disc">
+<li>
+  <a
+    href="https://github.com/mces58/JavaEssentials/tree/main/00-Temel/008-WhileDongusu">
+    While Loop
+  </a>
+</li>
+
+<li>
+  <a
+    href="https://github.com/mces58/JavaEssentials/tree/main/00-Temel/010-ForDongusu">
+    For Loop
+  </a>
+</li>
+
+<li>
+  <a
+    href="https://github.com/mces58/JavaEssentials/tree/main/00-Temel/009-DoWhileDongusu">
+    Do While Loop
+  </a>
+</li>
+
+<li>
+  <a
+    href="https://github.com/mces58/JavaEssentials/tree/main/00-Temel/011-BreakContiuneDeyimleri">
+    Break - Continue Statements
+  </a>
+</li>
+
+<li>
+  <a
+    href="https://github.com/mces58/JavaEssentials/tree/main/00-Temel/016-ForEach">
+    For Each Loop
+  </a>
+</li>
+</ul>
+
+<li>
+<h6>
+  <strong><em> Arrays </em></strong>
+</h6>
+</li>
+<ul type="disc">
+<li>
+  <a
+    href="https://github.com/mces58/JavaEssentials/tree/main/00-Temel/012-Arrays">
+    One-Dimensional Array
+  </a>
+</li>
+
+<li>
+  <a
+    href="https://github.com/mces58/JavaEssentials/tree/main/00-Temel/014-CokBoyutluDiziler">
+    Multi-Dimensional Array
+  </a>
+</li>
+
+<li>
+  <a
+    href="https://github.com/mces58/JavaEssentials/tree/main/00-Temel/015-ArrayList">
+    ArrayList
+  </a>
+</li>
+</ul>
+
+<li>
+<h6>
+  <strong><em> Methods </em></strong>
+</h6>
+</li>
+<ul type="disc">
+<li>
+  <a
+    href="https://github.com/mces58/JavaEssentials/tree/main/00-Temel/023-MetotlaraGiris">
+    Void Method
+  </a>
+</li>
+
+<li>
+  <a
+    href="https://github.com/mces58/JavaEssentials/tree/main/00-Temel/024-ParametreliMetotlar">
+    Parameters Method
+  </a>
+</li>
+
+<li>
+  <a
+    href="https://github.com/mces58/JavaEssentials/tree/main/00-Temel/025-ReturnMetotlar">
+    Return Method
+  </a>
+</li>
+
+<li>
+  <a
+    href="https://github.com/mces58/JavaEssentials/tree/main/00-Temel/027-MetotlardaOverloading">
+    Overloading
+  </a>
+</li>
+</ul>
+</ul>
+
+<br />
+
+<li>
+<h5>
+<strong><em> Lesson 2 - OOP </em></strong>
+</h5>
+</li>
+
+<ul type="circle">
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/00-Temel/028-ClasslaraGiris">
+  Classes
+</a>
+</li>
+
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/00-Temel/029-DegerVeReferansTipleriAnlamak">
+  Value and Reference Types
+</a>
+</li>
+
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/00-Temel/032-Encapsulation">
+  Encapsulation
+</a>
+</li>
+
+<li>
+<h6>
+  <strong><em> Constructor </em></strong>
+</h6>
+</li>
+
+<ul type="disc">
+<li>
+  <a
+    href="https://github.com/mces58/JavaEssentials/tree/main/00-Temel/033-Constructor">
+    Constructor 1
+  </a>
+</li>
+
+<li>
+  <a
+    href="https://github.com/mces58/JavaEssentials/tree/main/00-Temel/034-Constructor2">
+    Constructor 2
+  </a>
+</li>
+
+<li>
+  <a
+    href="https://github.com/mces58/JavaEssentials/tree/main/00-Temel/035-Constructor3">
+    Constructor 3
+  </a>
+</li>
+</ul>
+
+<li>
+<h6>
+  <strong>
+<em> Inheritance </em>
+</strong>
+</h6>
+</li>
+
+<ul type="disc">
+<li>
+  <a
+    href="https://github.com/mces58/JavaEssentials/tree/main/00-Temel/036-Inheritance">
+    Inheritance 1
+  </a>
+</li>
+
+<li>
+  <a
+    href="https://github.com/mces58/JavaEssentials/tree/main/00-Temel/037-Inheritance2">
+    Inheritance 2
+  </a>
+</li>
+</ul>
+<br>
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/00-Temel/039-Polymorphism">
+  Polymorphism
+</a>
+</li>
+
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/00-Temel/041-AbstractClasses">
+  Abstract Class
+</a>
+</li>
+
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/00-Temel/043-Interface">
+  Interface
+</a>
+</li>
+
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/00-Temel/047-Packages">
+  Packages
+</a>
+</li>
+
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/00-Temel/053-HataYonetimi">
+  Error Handling
+</a>
+</li>
+
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/00-Temel/061-Generics">
+  Generics
+</a>
+</li>
+</ul>
+
+<br />
+
+<li>
+<h5>
+<strong><em> Lesson 3 - File Management </em></strong>
+</h5>
+</li>
+
+<ul type="circle">
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/00-Temel/057-DosyaIslemleri">
+  File Operations 
+</a>
+</li>
+
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/00-Temel/058-DosyaIslemleri2">
+  File Operations
+</a>
+</li>
+
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/00-Temel/059-DosyaOkuma">
+  File Reading
+</a>
+</li>
+
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/00-Temel/060-DosyaYazma">
+  File Writing
+</a>
+</li>
+</ul>
+
+<br />
+
+<li>
+<h5>
+<strong> <em> Lesson 4 - Database Operations with JDBC </em></strong>
+</h5>
+</li>
+
+<ul type="circle">
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/00-Temel/064-JdbcIleSqlServerBaglantiOlusturma">
+  Connection
+</a>
+</li>
+
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/00-Temel/065-JdbcSorguGonderme">
+  Sending Queries
+</a>
+</li>
+
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/00-Temel/066-JdbcInsertIslemi">
+  Insert Operation
+</a>
+</li>
+
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/00-Temel/067-JdbcUpdateIslemi">
+  Update Operation
+</a>
+</li>
+
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/00-Temel/068-JdbcDeleteIslemi">
+  Delete Operation
+</a>
+</li>
+</ul>
+</ol>
+
+<br /><br />
+
+<h2>
+<li>
+&#x1F47E; 
+<a
+href="https://github.com/mces58/JavaEssentials/tree/main/01-Spring">
+SPRING
+</a>
+</li>
+</h2>
+
+<p>
+<em>
+In this section, the development environment and architecture of the Spring Framework have been examined and explained in detail. &#x1F4DA;
+</em>
+</p>
+
+<ol type="A">
+<li>
+<h5>
+<strong><em> Lesson 1 - Working with XML Files </em></strong>
+</h5>
+</li>
+
+<ul type="circle">
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/01-Spring/000-SpringIntro">
+  Spring Intro
+</a>
+</li>
+
+<li>
+<h6>
+  <strong><em> XML File </em></strong>
+</h6>
+</li>
+
+<ul type="disc">
+<li>
+  <a
+    href="https://github.com/mces58/JavaEssentials/tree/main/01-Spring/001-ApplicationContextXMLDosyasi">
+    Application Context XML File
+  </a>
+</li>
+
+<li>
+  <a
+    href="https://github.com/mces58/JavaEssentials/tree/main/01-Spring/002-ApplicationContextXMLDosyasi2">
+    Application Context XML File 2
+  </a>
+</li>
+</ul>
+
+<li>
+<h6>
+  <strong><em> Injection </em></strong>
+</h6>
+</li>
+
+<ul type="disc">
+<li>
+  <a
+    href="https://github.com/mces58/JavaEssentials/tree/main/01-Spring/003-ConstructorInjection">
+    Constructor Injection
+  </a>
+</li>
+
+<li>
+  <a
+    href="https://github.com/mces58/JavaEssentials/tree/main/01-Spring/004-SetterInjection">
+    Setter Injection
+  </a>
+</li>
+
+<li>
+  <a
+    href="https://github.com/mces58/JavaEssentials/tree/main/01-Spring/005-InjectingLiteralValuesWithSetter">
+    Injecting Literal Values with Setter
+  </a>
+</li>
+
+<li>
+  <a
+    href="https://github.com/mces58/JavaEssentials/tree/main/01-Spring/006-InjectingLiteralValuesWithConstructor">
+    Injecting Literal Values with Constructor
+  </a>
+</li>
+<br>
+</ul>
+
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/01-Spring/007-PropertiesDosyasi">
+  Properties File
+</a>
+</li>
+
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/01-Spring/009-BeanScopesPrototype">
+  Bean Scopes Prototype
+</a>
+</li>
+
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/01-Spring/010-BeanLifeCycle">
+  Bean Life Cycle
+</a>
+</li>
+
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/01-Spring/012-ComponentAnnotation">
+  Component Annotation
+</a>
+</li>
+
+<li>
+<h6>
+  <strong><em>Autowired Annotation</em></strong>
+</h6>
+</li>
+
+<ul type="disc">
+<li>
+  <a
+    href="https://github.com/mces58/JavaEssentials/tree/main/01-Spring/014-AutowiredAnnotationConstructorInjection">
+    Constructor Injection
+  </a>
+</li>
+
+<li>
+  <a
+    href="https://github.com/mces58/JavaEssentials/tree/main/01-Spring/015-AutowiredAnnotationSetterInjection">
+    Setter Injection
+  </a>
+</li>
+
+<li>
+  <a
+    href="https://github.com/mces58/JavaEssentials/tree/main/01-Spring/016-AutowiredAnnotationFieldInjection">
+    Field Injection
+  </a>
+</li>
+</ul>
+
+<li>
+<h6>
+  <strong><em>Qualifier Annotation</em></strong>
+</h6>
+</li>
+
+<ul type="disc">
+<li>
+  <a
+    href="https://github.com/mces58/JavaEssentials/tree/main/01-Spring/017-QualifierAnnotationConstructorInjection">
+    Constructor Injection
+  </a>
+</li>
+
+<li>
+  <a
+    href="https://github.com/mces58/JavaEssentials/tree/main/01-Spring/018-QualifierAnnotationSetterInjection">
+    Setter Injection
+  </a>
+</li>
+
+<li>
+  <a
+    href="https://github.com/mces58/JavaEssentials/tree/main/01-Spring/019-QualifierAnnotationFieldInjection">
+    Field Injection
+  </a>
+</li>
+</ul>
+<br>
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/01-Spring/020-ValueAnnotation">
+  Value Annotation
+</a>
+</li>
+
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/01-Spring/021-ScopeAnnotation">
+  Scope Annotation
+</a>
+</li>
+</ul>
+
+<br />
+
+<li>
+<h5>
+<strong><em> Lesson 2 - Configuration Classes </em></strong>
+</h5>
+</li>
+
+<ul type="circle">
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/01-Spring/022-ConfigurationClassi">
+  Configuration Class
+</a>
+</li>
+
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/01-Spring/023-BeanTanimlama">
+  Bean Definition
+</a>
+</li>
+
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/01-Spring/024-BeanWithDependencyInjection">
+  Bean with Dependency Injection
+</a>
+</li>
+
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/01-Spring/025-InjectionValuesPropertiesFile">
+  Injection Values Properties File
+</a>
+</li>
+
+<li>
+<h6>
+  <strong><em> Collections </em></strong>
+</h6>
+</li>
+
+<ul type="disc">
+<li>
+  <a
+    href="https://github.com/mces58/JavaEssentials/tree/main/01-Spring/026-CollectionsWithSetter">
+    With Setter
+  </a>
+</li>
+
+<li>
+  <a
+    href="https://github.com/mces58/JavaEssentials/tree/main/01-Spring/027-CollectionsWithConstructor">
+    With Constructor
+  </a>
+</li>
+</ul>
+<br>
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/01-Spring/028-Inheritance">
+  Inheritance
+</a>
+</li>
+
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/01-Spring/029-InheritanceMerge">
+  Inheritance Merge
+</a>
+</li>
+
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/01-Spring/030-MessageSource">
+  Message Source
+</a>
+</li>
+</ul>
+</ol>
+
+<br /><br />
+
+<h2>
+<li>
+&#x1F31F; 
+<a
+href="https://github.com/mces58/JavaEssentials/tree/main/02-Hibernate">
+HIBERNATE
+</a>
+</li>
+</h2>
+
+<p>
+<em>
+In this section, performing data access operations in a Java-based manner using the Hibernate technology has been explained.
+&#x1F4DA;
+</em>
+</p>
+
+<ol type="A">
+<li>
+<h5>
+<strong><em> Lesson 1 - Working with Hibernate </em></strong>
+</h5>
+</li>
+
+<ul type="circle">
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/02-Hibernate/000-HibernateIntro">
+  Hibernate Intro
+</a>
+</li>
+
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/02-Hibernate/001-OneToOne">
+  One to One
+</a>
+</li>
+
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/02-Hibernate/002-OneToOneMappedBy">
+  One to One MappedBy
+</a>
+</li>
+
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/02-Hibernate/003-OneToOneCascadeType">
+  One to One Cascade Type
+</a>
+</li>
+
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/02-Hibernate/004-OneToMany">
+  One to Many
+</a>
+</li>
+
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/02-Hibernate/005-ManyToOne">
+  Many to One
+</a>
+</li>
+
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/02-Hibernate/006-OneToManyExample">
+  One to Many Example
+</a>
+</li>
+
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/02-Hibernate/008-EagerLazyLoading">
+  Eager Lazy Loading
+</a>
+</li>
+
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/02-Hibernate/009-ManyToMany">
+  Many to Many
+</a>
+</li>
+</ul>
+</ol>
+
+<br /><br />
+
+<h2>
+<li>
+&#x1F4A3; 
+<a href="https://github.com/mces58/JavaEssentials/tree/main/03-AOP">
+ASPECT ORIENTED PROGRAMMING
+</a>
+</li>
+</h2>
+
+<p>
+<em>
+In this section, one of the Java technologies, AOP, has been explained.
+&#x1F4DA;
+</em>
+</p>
+
+<ol type="A">
+<li>
+<h5>
+<strong><em> Lesson 1 - Working with AOP </em></strong>
+</h5>
+</li>
+
+<ul type="circle">
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/03-AOP/000-BeforeAnnotation">
+  Before Annotation
+</a>
+</li>
+
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/03-AOP/001-PointCutExpressions">
+  Pointcut Expressions
+</a>
+</li>
+
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/03-AOP/002-PointCutDeclarations">
+  Pointcut Declarations
+</a>
+</li>
+
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/03-AOP/003-CombiningPointCut">
+  Combining Pointcut
+</a>
+</li>
+
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/03-AOP/004-OrderAnnotation">
+  Order Annotation
+</a>
+</li>
+
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/03-AOP/005-JoinPoint">
+  Join Point
+</a>
+</li>
+
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/03-AOP/006-AfterReturningAnnotation">
+  After Returning Annotation
+</a>
+</li>
+
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/03-AOP/007-AfterThrowingAnnotation">
+  After Throwing Annotation
+</a>
+</li>
+
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/03-AOP/008-AfterAnnotation">
+  After Annotation
+</a>
+</li>
+
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/03-AOP/009-AroundAnnotation">
+  Around Annotation
+</a>
+</li>
+
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/03-AOP/010-Special">
+  Special
+</a>
+</li>
+</ul>
+</ol>
+
+<br /><br />
+
+<h2>
+<li>
+&#x1F30A; 
+<a href="https://github.com/mces58/JavaEssentials/tree/main/04-Maven">
+MAVEN
+</a>
+</li>
+</h2>
+
+<p>
+<em>
+In this section, the convenience provided by Maven in large Java projects has been explained. &#x1F4DA;
+</em>
+</p>
+
+<ol type="A">
+<li>
+<h5>
+<strong><em> Lesson 1 - Working with Maven </em></strong>
+</h5>
+</li>
+
+<ul type="circle">
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/04-Maven/mavenIntro">
+  Maven Intro
+</a>
+</li>
+
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/04-Maven/webIntro">
+  Web Intro
+</a>
+</li>
+</ul>
+</ol>
+
+<br /><br />
+
+<h2>
+<li>
+&#x2600; 
+<a href="https://github.com/mces58/JavaEssentials/tree/main/05-JSON">
+JSON
+</a>
+</li>
+</h2>
+
+<p>
+<em> In this section, the usage of JSON in Java has been explained. &#x1F4DA;</em>
+</p>
+
+<ol type="A">
+<li>
+<h5>
+<strong><em> Lesson 1 - Working with JSON </em></strong>
+</h5>
+</li>
+
+<ul type="circle">
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/05-JSON/000-ReadJson">
+  Read JSON
+</a>
+</li>
+
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/05-JSON/002-WriteJson">
+  Write JSON
+</a>
+</li>
+
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/05-JSON/003-JsonAnyGetterAnnotation">
+  Any Getter Annotation
+</a>
+</li>
+
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/05-JSON/004-JsonGetterAnnotation">
+  Getter Annotation
+</a>
+</li>
+
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/05-JSON/005-JsonPropertyOrderAnnotation">
+  Property Order Annotation
+</a>
+</li>
+
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/05-JSON/006-JsonRawValueAnnotation">
+  Raw Value Annotation
+</a>
+</li>
+
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/05-JSON/007-JsonValueAnnotation">
+  Value Annotation
+</a>
+</li>
+
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/05-JSON/008-JsonRootNameAnnotation">
+  Root Name Annotation
+</a>
+</li>
+
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/05-JSON/009-JsonSerializeAnnotation">
+  Serialize Annotation
+</a>
+</li>
+
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/05-JSON/010-JsonCreatorAnnotation">
+  Creator Annotation
+</a>
+</li>
+
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/05-JSON/011-JsonAnySetterAnnotation">
+  Any Setter Annotation
+</a>
+</li>
+
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/05-JSON/012-JsonSetterAnnotation">
+  Setter Annotation
+</a>
+</li>
+
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/05-JSON/013-JsonDeserializeAnnotation">
+  Deserialize Annotation
+</a>
+</li>
+
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/05-JSON/014-JsonIgnorePropertiesAnnotation">
+  Ignore Properties Annotation
+</a>
+</li>
+
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/05-JSON/015-JsonIgnoreAnnotation">
+  Ignore Annotation
+</a>
+</li>
+
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/05-JSON/016-JsonIncludeAnnotation">
+  Include Annotation
+</a>
+</li>
+
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/05-JSON/017-JsonAutoDetectAnnotation">
+  Auto Detect Annotation
+</a>
+</li>
+
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/05-JSON/018-JsonPropertyAnnotation">
+  Property Annotation
+</a>
+</li>
+
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/05-JSON/019-JsonFormatAnnotation">
+  Format Annotation
+</a>
+</li>
+
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/05-JSON/020-JsonManagedReferenceAnnotation">
+  Managed Reference Annotation
+</a>
+</li>
+
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/05-JSON/021-JsonIdentityInfoAnnotation">
+  Identity Info Annotation
+</a>
+</li>
+</ul>
+</ol>
+
+<br /><br />
+
+<h2>
+<li>
+&#x1F4A5; 
+<a
+href="https://github.com/mces58/JavaEssentials/tree/main/06-SpringREST">
+SPRING REST
+</a>
+</li>
+</h2>
+
+<p>
+<em>
+In this section, how to perform operations such as http, api, server, etc. in Java has been explained. &#x1F4DA;
+</em>
+</p>
+
+<ol type="A">
+<li>
+<h5>
+<strong><em> Lesson 1 - Working with Spring Rest </em></strong>
+</h5>
+</li>
+
+<ul type="circle">
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/06-SpringREST/000-RestHelloWorld">
+  Rest Hello World
+</a>
+</li>
+
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/06-SpringREST/002-RestJsonFormat">
+  Rest JSON Format
+</a>
+</li>
+
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/06-SpringREST/003-PathVariable">
+  Path Variable
+</a>
+</li>
+
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/06-SpringREST/004-ExceptionHandling">
+  Exception Handling
+</a>
+</li>
+
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/06-SpringREST/005-ControllerAdvice">
+  Controller Advice
+</a>
+</li>
+
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/06-SpringREST/SpringCrmRest">
+  Spring CRM Rest
+</a>
+</li>
+</ul>
+</ol>
+
+<br /><br />
+
+<h2>
+<li>
+&#x1F4AF; 
+<a
+href="https://github.com/mces58/JavaEssentials/tree/main/07-SpringBoot">
+SPRING BOOT
+</a>
+</li>
+</h2>
+
+<p>
+<em>
+In this section, questions such as what is Spring Boot, how it works, and where it is used have been answered, and creating database connections, building HTML pages using the Thymeleaf technology have been explained. &#x1F4DA;
+</em>
+</p>
+
+<ol type="A">
+<li>
+<h5>
+<strong><em> Lesson 1 - Working with Spring Boot </em></strong>
+</h5>
+</li>
+
+<ul type="circle">
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/07-SpringBoot/000-SpringBootIntro">
+  Spring Boot Intro
+</a>
+</li>
+
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/07-SpringBoot/001-SpringBootDevTools">
+  Spring Boot Devtools
+</a>
+</li>
+
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/07-SpringBoot/002-SpringBootActuator">
+  Spring Boot Actuator
+</a>
+</li>
+
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/07-SpringBoot/004-PropertiesFile">
+  Properties File
+</a>
+</li>
+
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/07-SpringBoot/005-HibernateCRUD">
+  Hibernate CRUD
+</a>
+</li>
+
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/07-SpringBoot/006-JpaCRUD">
+  JPA CRUD
+</a>
+</li>
+
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/07-SpringBoot/007-SpringDataJpaCRUD">
+  Spring Data JPA CRUD
+</a>
+</li>
+
+<li>
+<a
+  href="https://github.com/mces58/JavaEssentials/tree/main/07-SpringBoot/008-SpringDataRestCRUD">
+  Spring Data Rest CRUD
+</a>
+</li>
+
+<li>
+<h6>
+  <strong><em> Thymeleaf </em></strong>
+</h6>
+</li>
+
+<ul type="disc">
+<li>
+  <a
+    href="https://github.com/mces58/JavaEssentials/tree/main/07-SpringBoot/009-Thymeleaf">
+    Thymeleaf Intro
+  </a>
+</li>
+
+<li>
+  <a
+    href="https://github.com/mces58/JavaEssentials/tree/main/07-SpringBoot/010-ThymeleafCSS">
+    Thymeleaf CSS
+  </a>
+</li>
+
+<li>
+  <a
+    href="https://github.com/mces58/JavaEssentials/tree/main/07-SpringBoot/011-ThymeleafCRUDGet">
+    Thymeleaf CRUD Get
+  </a>
+</li>
+
+<li>
+  <a
+    href="https://github.com/mces58/JavaEssentials/tree/main/07-SpringBoot/012-ThymeleafCRUDAdd">
+    Thymeleaf CRUD Insert
+  </a>
+</li>
+
+<li>
+  <a
+    href="https://github.com/mces58/JavaEssentials/tree/main/07-SpringBoot/013-ThymeleafCRUDUpdate">
+    Thymeleaf CRUD Update
+  </a>
+</li>
+
+<li>
+  <a
+    href="https://github.com/mces58/JavaEssentials/tree/main/07-SpringBoot/014-ThymeleafCRUDDelete">
+    Thymeleaf CRUD Delete
+  </a>
+</li>
+
+<li>
+  <a
+    href="https://github.com/mces58/JavaEssentials/tree/main/07-SpringBoot/015-ThymeleafCRUDSearch">
+    Thymeleaf CRUD Search
+  </a>
+</li>
+</ul>
+</ul>
+</ol>
+</ol>
